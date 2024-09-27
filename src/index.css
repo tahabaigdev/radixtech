@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-[62.5%];
+  }
+
+  body {
+    @apply bg-[#FAF8F5] font-manrope text-[1.6rem] font-normal leading-[2.4rem];
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-[124rem] px-[2rem] md:px-[4rem] lg:px-0;
+  }
+}
+
+@layer utilities {
+  .nav-item.active {
+    @apply text-blackColor underline;
+  }
+}
+
+/* Plain CSS */
+
+.hero-avatar:nth-child(2) {
+  margin-left: -1.5rem;
+  z-index: -1;
+}
+
+.hero-avatar:nth-child(3) {
+  margin-left: -1.5rem;
+  z-index: -2;
+}
+
+.hero-avatar:nth-child(4) {
+  margin-left: -1.5rem;
+  z-index: -3;
+}
+
+.hero-avatar:nth-child(5) {
+  margin-left: -1.5rem;
+  z-index: -4;
+}
