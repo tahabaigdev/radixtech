@@ -4,7 +4,7 @@ import Common_Heading from "../../styles/Common_Heading/Common_Heading";
 
 const Blog_Sec = () => {
   return (
-    <section>
+    <section className="bg-whiteColor">
       <div className="container py-[10rem]">
         <div className="flex items-start justify-between gap-[8rem]">
           <div className="max-w-[100rem]">
