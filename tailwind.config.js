@@ -7,7 +7,7 @@ export default {
       manrope: ["Manrope", "sans-serif"],
     },
     colors: {
-      primaryColor: "#f14f26",
+      primaryColor: "#e40915",
       blackColor: "#000000",
       whiteColor: "#ffffff",
       textPrimary: "#4F4F4F",

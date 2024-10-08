@@ -1,6 +1,7 @@
 import About_Sec from "../../components/About_Sec/About_Sec";
 import Blog_Sec from "../../components/Blog_Sec/Blog_Sec";
 import Hero_Sec from "../../components/Hero_Sec/Hero_Sec";
+import Infinite_Carousel from "../../components/Infinite_Carousel/Infinite_Carousel";
 import Portfolio_Sec from "../../components/Portfolio_Sec/Portfolio_Sec";
 import Testimonials_Sec from "../../components/Testimonials_Sec/Testimonials_Sec";
 import What_We_Sec from "../../components/What_We_Sec/What_We_Sec";
@@ -19,6 +20,8 @@ const Home = () => {
       <Blog_Sec />
 
       <Testimonials_Sec />
+
+      <Infinite_Carousel />
     </>
   );
 };
