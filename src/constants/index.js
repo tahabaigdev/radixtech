@@ -174,4 +174,31 @@ export const testimonialsData = [
     subTitle: "XYZ Corporation",
     imgUrl: TestimonialsAvatar6,
   },
+
+  {
+    id: 6,
+    message:
+      "Incredible service! The team at Digital Ease transformed our platform, delivering seamless user experiences. Highly recommended for innovative solutions.",
+    title: "John Smith",
+    subTitle: "XYZ Corporation",
+    imgUrl: TestimonialsAvatar6,
+  },
+
+  {
+    id: 7,
+    message:
+      "Incredible service! The team at Digital Ease transformed our platform, delivering seamless user experiences. Highly recommended for innovative solutions.",
+    title: "John Smith",
+    subTitle: "XYZ Corporation",
+    imgUrl: TestimonialsAvatar6,
+  },
+
+  {
+    id: 8,
+    message:
+      "Incredible service! The team at Digital Ease transformed our platform, delivering seamless user experiences. Highly recommended for innovative solutions.",
+    title: "John Smith",
+    subTitle: "XYZ Corporation",
+    imgUrl: TestimonialsAvatar6,
+  },
 ];
