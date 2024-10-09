@@ -25,7 +25,10 @@ import {
   Settings,
   User,
   Users,
+  Youtube,
 } from "lucide-react";
+import { FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { IoLogoInstagram } from "react-icons/io";
 
 export const navLinks = [
   {
@@ -356,5 +359,31 @@ export const mainLinks = [
     id: 3,
     text: "Why RadixTech",
     link: "/why",
+  },
+];
+
+export const socialLinksData = [
+  {
+    id: 0,
+    link: "",
+    icon: IoLogoInstagram,
+  },
+
+  {
+    id: 1,
+    link: "",
+    icon: FaYoutube,
+  },
+
+  {
+    id: 2,
+    link: "",
+    icon: FaLinkedinIn,
+  },
+
+  {
+    id: 3,
+    link: "",
+    icon: FaFacebookF,
   },
 ];
