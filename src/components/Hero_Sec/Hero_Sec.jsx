@@ -32,14 +32,14 @@ const Hero_Sec = () => {
       <div className="container relative z-[1] py-[8rem]">
         <div className="grid grid-cols-1 items-center gap-[8rem] xl:grid-cols-2">
           <motion.div
-            className="flex flex-col"
+            className="flex flex-col items-center text-center sm:items-start sm:text-left"
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5, delay: 0.3 }}
             variants={leftColumnVariants}
           >
-            <h1 className="text-[6rem] font-bold leading-[7rem] tracking-[-2px] text-blackColor sm:text-[7rem] sm:leading-[8rem]">
-              Data Solutions for Real-Time Impact
+            <h1 className="text-[4.5rem] font-bold leading-[5.5rem] tracking-[-2px] text-blackColor sm:text-[6rem] sm:leading-[7rem]">
+              RadixTech: Where data meets impact.
             </h1>
 
             <p className="mb-[4rem] mt-[2rem] text-[1.6rem] font-medium leading-[3.2rem] text-textPrimary">

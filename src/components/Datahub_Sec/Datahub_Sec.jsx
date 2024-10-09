@@ -26,7 +26,7 @@ const Datahub_Sec = () => {
           animate={headingInView ? "visible" : "hidden"}
           variants={fadeInVariants}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex items-start justify-between gap-[4rem]"
+          className="flex items-start justify-between gap-[4rem] text-center sm:text-left"
         >
           <div>
             <Common_Heading

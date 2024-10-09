@@ -45,6 +45,7 @@ const About_Sec = () => {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center sm:text-left"
           >
             <Common_Heading
               title="We specialize in innovative digital solutions"

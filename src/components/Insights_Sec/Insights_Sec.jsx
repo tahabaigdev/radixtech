@@ -36,7 +36,7 @@ const Insights_Sec = () => {
             animate={headingInView ? "visible" : "hidden"}
             variants={fadeInVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="max-w-[100rem]"
+            className="max-w-[100rem] text-center sm:text-left"
           >
             <Common_Heading
               title="Check out our latest news while you're on the go!"

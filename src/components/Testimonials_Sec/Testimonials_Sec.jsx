@@ -17,7 +17,7 @@ const Testimonials_Sec = () => {
   return (
     <section>
       <div className="container py-[8rem] xl:py-[10rem]">
-        <div>
+        <div className="text-center sm:text-left">
           <Common_Heading
             title="Client Voices: What Our Customers Have to Say"
             subTitle="Testimonials"
