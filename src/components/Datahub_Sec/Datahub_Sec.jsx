@@ -11,10 +11,23 @@ const Datahub_Sec = () => {
     visible: { opacity: 1, y: 0 },
   };
 
+  // Set up `useInView` for Common_Heading
+  const [headingRef, headingInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <section>
       <div className="container py-[8rem] xl:py-[10rem]">
-        <motion.div className="flex items-start justify-between gap-[4rem]">
+        <motion.div
+          ref={headingRef}
+          initial="hidden"
+          animate={headingInView ? "visible" : "hidden"}
+          variants={fadeInVariants}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="flex items-start justify-between gap-[4rem]"
+        >
           <div>
             <Common_Heading
               title="Data-driven decisions in real time"

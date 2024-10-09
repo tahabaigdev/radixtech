@@ -1,12 +1,34 @@
 import { Calendar } from "lucide-react";
 import CtaImage from "../../assets/images/cta-image.svg";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Book_Sec = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Ensures animation runs only once
+    threshold: 0.1, // Percentage of the element visible to trigger the animation
+  });
+
+  const leftColumnVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const rightColumnVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   return (
-    <section>
+    <section ref={ref}>
       <div className="container py-[8rem] xl:py-[10rem]">
         <div className="grid h-[100%] w-[100%] grid-cols-1 items-center gap-[4rem] bg-primaryColor p-[4rem] lg:grid-cols-2">
-          <div>
+          <motion.div
+            variants={leftColumnVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <h3 className="text-center text-[4rem] font-medium leading-[5rem] tracking-[-0.64px] text-whiteColor sm:text-[5rem] sm:leading-[6rem] lg:text-left">
               Schedule a demo
             </h3>
@@ -25,11 +47,17 @@ const Book_Sec = () => {
                 Schedule a demo <Calendar />
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex justify-center overflow-hidden rounded-[1.2rem]">
+          <motion.div
+            variants={rightColumnVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex justify-center overflow-hidden rounded-[1.2rem]"
+          >
             <img src={CtaImage} alt="Cta Image" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
