@@ -6,9 +6,21 @@ import HeroAvatar3 from "../../assets/images/hero-avatar-3.avif";
 import HeroAvatar4 from "../../assets/images/hero-avatar-4.avif";
 import HeroAvatar5 from "../../assets/images/hero-avatar-5.avif";
 import RatingStar from "../../assets/images/rating-star.svg";
-import HeroImg from "../../assets/images/hero-img.avif";
+import HeroImg from "../../assets/images/hero-img.gif";
+import { motion } from "framer-motion";
 
 const Hero_Sec = () => {
+  // Animation variants for the columns
+  const leftColumnVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const rightColumnVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   return (
     <section className="relative overflow-hidden">
       <img
@@ -18,18 +30,25 @@ const Hero_Sec = () => {
       />
 
       <div className="container relative z-[1] py-[8rem]">
-        <div className="grid grid-cols-2 items-center gap-[8rem]">
-          <div className="flex flex-col">
-            <h1 className="text-[8rem] font-bold leading-[9.6rem] tracking-[-2px] text-blackColor">
-              We Are a Digital Design Agency.
+        <div className="grid grid-cols-1 items-center gap-[8rem] xl:grid-cols-2">
+          <motion.div
+            className="flex flex-col"
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={leftColumnVariants}
+          >
+            <h1 className="text-[6rem] font-bold leading-[7rem] tracking-[-2px] text-blackColor sm:text-[7rem] sm:leading-[8rem]">
+              Data Solutions for Real-Time Impact
             </h1>
 
-            <p className="mb-[4rem] mt-[2rem] text-[1.8rem] font-medium leading-[3.24rem] text-textPrimary">
-              That's how fast it goes and I help startups and tech companies
-              develop pixel-perfect designs.
+            <p className="mb-[4rem] mt-[2rem] text-[1.6rem] font-medium leading-[3.2rem] text-textPrimary">
+              RadixTech offers simplified digital platforms and services to
+              support data-driven decisions in real time for aid workers and
+              development practitioners.
             </p>
 
-            <Common_Btn link="/contact" linkText="Let's Talk" />
+            <Common_Btn link="/contact" linkText="Why Choose Us" />
 
             <div className="mt-[4rem] flex items-center gap-[2rem]">
               <div>
@@ -59,26 +78,32 @@ const Hero_Sec = () => {
                 <img src={RatingStar} alt="Rating Star" />
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative">
-            <div className="h-[60rem] w-[100%]">
+          <motion.div
+            className="relative overflow-hidden rounded-[1.2rem]"
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={rightColumnVariants}
+          >
+            <div className="aspect-[1/1.3] w-[100%] sm:aspect-[1/1]">
               <img
                 src={HeroImg}
                 alt="Hero Image"
-                className="h-[100%] w-[100%] object-cover object-center"
+                className="h-[100%] w-[100%]"
               />
             </div>
 
-            <div className="absolute bottom-0 right-0 max-w-[30rem] rounded-tl-[6rem] bg-[#faf8f5] px-[2rem] py-[4rem]">
-              <ul className="flex flex-wrap justify-end gap-[1.4rem]">
+            <div className="absolute bottom-0 right-0 bg-[#faf8f5] px-[2rem] py-[4rem] md:max-w-[45rem] md:rounded-tl-[6rem]">
+              <ul className="flex flex-wrap justify-center gap-[1.4rem] md:justify-end">
                 {[
-                  "Branding",
-                  "Web Design",
-                  "UI+UX",
-                  "Development",
-                  "Mobile App",
-                  "Webflow",
+                  "Statistical Analysis",
+                  "Product Development",
+                  "Data Management",
+                  "Machine Learning",
+                  "MEAL & MIS",
+                  "Geographic Information Systems",
                 ].map((item, i) => (
                   <li
                     key={i}
@@ -89,7 +114,7 @@ const Hero_Sec = () => {
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -15,12 +15,14 @@ export default {
 
     extend: {
       backgroundImage: {},
-      boxShadow: {},
+      boxShadow: {
+        shadow1: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+      },
       keyframes: {},
       animation: {},
     },
     screens: {
-      sm: "425px",
+      sm: "426px",
       md: "800px",
       lg: "1024px",
       xl: "1280px",

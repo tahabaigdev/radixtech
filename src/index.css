@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply text-[62.5%];
+    @apply text-[50%] md:text-[55%] lg:text-[62.5%];
   }
 
   body {
@@ -14,7 +14,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto max-w-[124rem] px-[2rem] md:px-[4rem] lg:px-0;
+    @apply mx-auto max-w-[124rem] px-[2rem] lg:px-[4rem] xl:px-0;
   }
 }
 
@@ -86,4 +86,8 @@
   100% {
     transform: translateX(-100%);
   }
+}
+
+.swiper-slide {
+  height: auto;
 }

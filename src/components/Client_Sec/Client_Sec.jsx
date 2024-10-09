@@ -1,18 +1,18 @@
-import ClientLogo1 from "../../assets/images/client-logo-1.svg";
-import ClientLogo2 from "../../assets/images/client-logo-2.svg";
-import ClientLogo3 from "../../assets/images/client-logo-3.svg";
+import ClientLogo1 from "../../assets/images/client-logo-1.png";
+import ClientLogo2 from "../../assets/images/client-logo-2.png";
+import ClientLogo3 from "../../assets/images/client-logo-3.png";
 
 const Client_Sec = () => {
   return (
-    <section className="bg-blackColor py-[4rem]">
-      <div className="container flex items-center gap-[4rem]">
+    <section className="overflow-hidden bg-blackColor py-[4rem]">
+      <div className="container flex flex-col items-center gap-[4rem] xl:flex-row">
         <div className="w-[19.3rem]">
-          <h4 className="text-[2rem] font-bold leading-[3rem] text-whiteColor">
-            Trusted by 40+ worldwide clients
+          <h4 className="text-center text-[2rem] font-bold leading-[3rem] text-whiteColor xl:text-left">
+            Trusted by worldwide clients
           </h4>
         </div>
 
-        <div className="w-[100.7rem]">
+        <div className="w-[100%] xl:w-[100.7rem]">
           <div className="scroller">
             <div className="scroller-in">
               {[

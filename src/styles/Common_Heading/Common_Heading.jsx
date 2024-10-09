@@ -10,7 +10,7 @@ const Common_Heading = ({ title, subTitle, titleColor, subTitleColor }) => {
 
       <h2
         style={{ color: titleColor }}
-        className="text-[6.4rem] font-semibold leading-[7.68rem] tracking-[-0.64px]"
+        className="text-[4rem] font-semibold leading-[5rem] tracking-[-0.64px] sm:text-[6.4rem] sm:leading-[7.68rem]"
       >
         {title}
       </h2>

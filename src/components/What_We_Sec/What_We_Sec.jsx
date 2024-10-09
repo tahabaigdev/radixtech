@@ -5,23 +5,14 @@ import Common_Heading from "../../styles/Common_Heading/Common_Heading";
 const What_We_Sec = () => {
   return (
     <section className="bg-[#FDD566]">
-      <div className="container py-[10rem]">
+      <div className="container py-[8rem] xl:py-[10rem]">
         <div className="flex items-start justify-between gap-[8rem]">
           <div className="max-w-[100rem]">
             <Common_Heading
-              title="Our promise is to deliver a service that surpasses all expectations."
+              title="We offer software solutions, data analysis, mapping, management support, and training."
               subTitle="What We Do"
               titleColor="#000000"
               subTitleColor="#4F4F4F"
-            />
-          </div>
-
-          <div>
-            <Common_Btn_2
-              link="/service"
-              linkText="View all Services"
-              textColor="#000000"
-              iconColor="#000000"
             />
           </div>
         </div>
@@ -30,17 +21,13 @@ const What_We_Sec = () => {
           {whatWeData.map((item) => (
             <div
               key={item.id}
-              className="flex items-center gap-[4rem] border-b border-solid border-blackColor pb-[4rem]"
+              className="flex flex-col items-center gap-[4rem] border-b border-solid border-blackColor pb-[4rem] sm:flex-row"
             >
               <div>
-                <img
-                  src={item.imgUrl}
-                  alt="Vector Image"
-                  className="max-w-[8rem]"
-                />
+                <item.icon className="h-[8rem] w-[8rem] stroke-1" />
               </div>
 
-              <div className="flex flex-col gap-[1rem]">
+              <div className="flex flex-col gap-[1rem] text-center sm:text-left">
                 <h3 className="text-[3.6rem] font-semibold leading-[4.32rem] tracking-[-0.36px] text-blackColor">
                   {item.title}
                 </h3>

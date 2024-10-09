@@ -16,7 +16,7 @@ const Testimonials_Sec = () => {
 
   return (
     <section>
-      <div className="container py-[10rem]">
+      <div className="container py-[8rem] xl:py-[10rem]">
         <div>
           <Common_Heading
             title="Client Voices: What Our Customers Have to Say"
@@ -55,17 +55,31 @@ const Testimonials_Sec = () => {
             modules={[Navigation]}
             allowTouchMove={false} // Disable swiping/touch interactions
             slideToClickedSlide={false}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+              1025: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+            }}
             className="mySwiper"
           >
             {testimonialsData.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className="flex flex-col gap-[3rem] border border-solid border-[#e9e2da] bg-whiteColor p-[3rem]">
+                <div className="flex h-[100%] flex-col justify-between overflow-hidden rounded-[1.2rem] border border-solid border-[#e9e2da] bg-whiteColor p-[3rem]">
                   <p className="text-[1.8rem] font-medium leading-[3.24rem] text-textPrimary">
                     {item.message}
                   </p>
 
-                  <div className="flex items-center gap-[2rem]">
-                    <div className="h-[4.8rem] w-[4.8rem] overflow-hidden rounded-[50%]">
+                  <div className="mt-[2rem] flex items-center gap-[2rem]">
+                    <div className="h-[4.8rem] min-w-[4.8rem] overflow-hidden rounded-[50%]">
                       <img
                         src={item.imgUrl}
                         alt="Testimonials Image"
@@ -92,7 +106,7 @@ const Testimonials_Sec = () => {
           {/* Prev button - hidden when on the first slide */}
           <div
             ref={prevRef}
-            className={`custom-prev absolute left-[1rem] top-1/2 z-10 inline-flex h-[4.4rem] w-[4.4rem] -translate-y-1/2 cursor-pointer items-center justify-center rounded-[50%] bg-primaryColor transition-all duration-[0.1s] active:scale-[0.9] ${
+            className={`custom-prev absolute left-[1rem] top-1/2 z-10 inline-flex min-h-[4.4rem] min-w-[4.4rem] -translate-y-1/2 cursor-pointer items-center justify-center rounded-[50%] bg-primaryColor transition-all duration-[0.1s] active:scale-[0.9] ${
               isBeginning
                 ? "pointer-events-none opacity-0"
                 : "opacity-1 pointer-events-auto"
@@ -113,7 +127,7 @@ const Testimonials_Sec = () => {
           {/* Next button - hidden when on the last slide */}
           <div
             ref={nextRef}
-            className={`custom-next absolute right-[1rem] top-1/2 z-10 inline-flex h-[4.4rem] w-[4.4rem] -translate-y-1/2 cursor-pointer items-center justify-center rounded-[50%] bg-primaryColor transition-all duration-[0.1s] active:scale-[0.9] ${
+            className={`custom-next absolute right-[1rem] top-1/2 z-10 inline-flex min-h-[4.4rem] min-w-[4.4rem] -translate-y-1/2 cursor-pointer items-center justify-center rounded-[50%] bg-primaryColor transition-all duration-[0.1s] active:scale-[0.9] ${
               isEnd
                 ? "pointer-events-none opacity-0"
                 : "opacity-1 pointer-events-auto"

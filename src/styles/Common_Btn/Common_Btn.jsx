@@ -7,7 +7,7 @@ const Common_Btn = ({ link, linkText }) => {
       <div>
         <NavLink
           to={link}
-          className="inline-flex h-[4.8rem] min-w-[14.5rem] items-center justify-center gap-[1rem] bg-primaryColor px-[2rem] py-[1.2rem] transition-all duration-[0.3s] hover:opacity-[0.8]"
+          className="inline-flex h-[4.8rem] min-w-[14.5rem] items-center justify-center gap-[1rem] rounded-[1.2rem] bg-primaryColor px-[2rem] py-[1.2rem] transition-all duration-[0.3s] hover:opacity-[0.8]"
         >
           <span className="text-[1.6rem] font-semibold text-whiteColor">
             {linkText}
