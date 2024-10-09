@@ -17,7 +17,7 @@ const What_We_Sec = () => {
   });
 
   return (
-    <section className="bg-[#FDD566]">
+    <section className="overflow-x-hidden bg-[#FDD566]">
       <div className="container py-[8rem] xl:py-[10rem]">
         <div className="flex items-start justify-between gap-[8rem] text-center sm:text-left">
           <motion.div

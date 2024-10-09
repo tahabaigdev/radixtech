@@ -20,7 +20,7 @@ const About_Sec = () => {
   };
 
   return (
-    <section ref={ref} className="bg-[#FDD566]">
+    <section ref={ref} className="overflow-x-hidden bg-[#FDD566]">
       <div className="container py-[8rem] xl:py-[10rem]">
         <div className="grid grid-cols-1 items-center gap-[4rem] xl:grid-cols-2">
           {/* Left Column */}

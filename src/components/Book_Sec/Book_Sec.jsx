@@ -20,7 +20,7 @@ const Book_Sec = () => {
   };
 
   return (
-    <section ref={ref}>
+    <section ref={ref} className="overflow-x-hidden">
       <div className="container py-[8rem] xl:py-[10rem]">
         <div className="grid h-[100%] w-[100%] grid-cols-1 items-center gap-[4rem] bg-primaryColor p-[4rem] lg:grid-cols-2">
           <motion.div

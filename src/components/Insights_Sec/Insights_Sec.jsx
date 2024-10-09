@@ -26,7 +26,7 @@ const Insights_Sec = () => {
   });
 
   return (
-    <section className="bg-whiteColor">
+    <section className="overflow-x-hidden bg-whiteColor">
       <div className="container py-[8rem] xl:py-[10rem]">
         {/* Heading Section */}
         <div className="flex items-start justify-between gap-[8rem]">

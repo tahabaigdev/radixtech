@@ -18,7 +18,7 @@ const Datahub_Sec = () => {
   });
 
   return (
-    <section>
+    <section className="overflow-x-hidden">
       <div className="container py-[8rem] xl:py-[10rem]">
         <motion.div
           ref={headingRef}

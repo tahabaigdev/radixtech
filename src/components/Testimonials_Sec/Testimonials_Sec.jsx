@@ -15,7 +15,7 @@ const Testimonials_Sec = () => {
   const [isEnd, setIsEnd] = useState(false); // Track if it's the last slide
 
   return (
-    <section>
+    <section className="overflow-x-hidden">
       <div className="container py-[8rem] xl:py-[10rem]">
         <div className="text-center sm:text-left">
           <Common_Heading
