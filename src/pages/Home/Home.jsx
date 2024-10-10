@@ -7,6 +7,7 @@ import What_We_Sec from "../../components/What_We_Sec/What_We_Sec";
 import Client_Sec from "../../components/Client_Sec/Client_Sec";
 import Book_Sec from "../../components/Book_Sec/Book_Sec";
 import Use_Sec from "../../components/Use_Sec/Use_Sec";
+import Faq_Sec from "../../components/Faq_Sec/Faq_Sec";
 
 const Home = () => {
   return (
@@ -16,6 +17,8 @@ const Home = () => {
       <Use_Sec />
 
       <About_Sec />
+
+      <Faq_Sec />
 
       <Datahub_Sec />
 
