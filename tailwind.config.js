@@ -5,9 +5,10 @@ export default {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
       manrope: ["Manrope", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
     },
     colors: {
-      primaryColor: "#e40915",
+      primaryColor: "#E50914",
       blackColor: "#000000",
       whiteColor: "#ffffff",
       textPrimary: "#4F4F4F",

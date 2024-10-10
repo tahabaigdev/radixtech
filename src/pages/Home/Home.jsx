@@ -6,11 +6,14 @@ import Testimonials_Sec from "../../components/Testimonials_Sec/Testimonials_Sec
 import What_We_Sec from "../../components/What_We_Sec/What_We_Sec";
 import Client_Sec from "../../components/Client_Sec/Client_Sec";
 import Book_Sec from "../../components/Book_Sec/Book_Sec";
+import Use_Sec from "../../components/Use_Sec/Use_Sec";
 
 const Home = () => {
   return (
     <>
       <Hero_Sec />
+
+      <Use_Sec />
 
       <About_Sec />
 
