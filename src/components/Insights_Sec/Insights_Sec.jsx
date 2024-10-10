@@ -29,14 +29,14 @@ const Insights_Sec = () => {
     <section className="overflow-x-hidden bg-whiteColor">
       <div className="container py-[8rem] xl:py-[10rem]">
         {/* Heading Section */}
-        <div className="flex items-start justify-between gap-[8rem]">
+        <div className="flex items-start justify-center gap-[8rem] xl:justify-between">
           <motion.div
             ref={headingRef}
             initial="hidden"
             animate={headingInView ? "visible" : "hidden"}
             variants={fadeInVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="max-w-[100rem] text-center sm:text-left"
+            className="max-w-[100rem] text-center xl:text-left"
           >
             <Common_Heading
               title="Check out our latest news while you're on the go!"

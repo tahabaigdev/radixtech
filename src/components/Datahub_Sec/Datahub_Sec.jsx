@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Common_Heading from "../../styles/Common_Heading/Common_Heading";
-import { portfolioData } from "../../constants";
+import { dataHubData } from "../../constants";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -26,7 +26,7 @@ const Datahub_Sec = () => {
           animate={headingInView ? "visible" : "hidden"}
           variants={fadeInVariants}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex items-start justify-between gap-[4rem] text-center sm:text-left"
+          className="flex justify-center text-center xl:justify-start xl:text-left"
         >
           <div>
             <Common_Heading
@@ -39,8 +39,8 @@ const Datahub_Sec = () => {
         </motion.div>
 
         {/* Grid Section */}
-        <div className="mx-auto mt-[4rem] grid max-w-[115rem] grid-cols-1 gap-[4rem] lg:grid-cols-2">
-          {portfolioData.map((item, index) => {
+        <div className="mx-auto mt-[4rem] grid max-w-[70rem] grid-cols-1 gap-[4rem] lg:grid-cols-2 xl:max-w-[115rem]">
+          {dataHubData.map((item, index) => {
             // Set up `useInView` for each grid item
             const [ref, inView] = useInView({
               triggerOnce: true, // Triggers animation only once
@@ -48,7 +48,7 @@ const Datahub_Sec = () => {
             });
 
             return (
-              <motion.a
+              <motion.div
                 ref={ref} // Pass the ref to the motion element
                 key={item.id}
                 href="#"
@@ -87,7 +87,7 @@ const Datahub_Sec = () => {
                     </div>
                   </div>
                 </div>
-              </motion.a>
+              </motion.div>
             );
           })}
         </div>

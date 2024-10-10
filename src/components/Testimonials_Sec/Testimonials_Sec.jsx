@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -7,12 +7,23 @@ import Common_Heading from "../../styles/Common_Heading/Common_Heading";
 import { testimonialsData } from "../../constants";
 
 const Testimonials_Sec = () => {
-  // Create refs for custom navigation buttons
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  const swiperRef = useRef(null); // Create a ref for Swiper
-  const [isBeginning, setIsBeginning] = useState(true); // Track if it's the first slide
-  const [isEnd, setIsEnd] = useState(false); // Track if it's the last slide
+  const swiperRef = useRef(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      const swiper = swiperRef.current;
+
+      swiper.params.navigation.prevEl = prevRef.current;
+      swiper.params.navigation.nextEl = nextRef.current;
+
+      swiper.navigation.init();
+      swiper.navigation.update();
+    }
+  }, []);
 
   return (
     <section className="overflow-x-hidden">
@@ -27,33 +38,20 @@ const Testimonials_Sec = () => {
         </div>
 
         <div className="relative mt-[4rem]">
-          {/* Swiper component */}
           <Swiper
-            onInit={(swiper) => {
-              // Save the swiper instance to the ref
+            onSwiper={(swiper) => {
               swiperRef.current = swiper;
-
-              // Assign refs to swiper navigation buttons
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-
-              // Update swiper navigation
-              swiper.navigation.init();
-              swiper.navigation.update();
-
-              // Check initial state
-              setIsBeginning(swiper.isBeginning);
-              setIsEnd(swiper.isEnd);
             }}
-            onSlideChange={(swiper) => {
-              // Update the button visibility when the slide changes
-              setIsBeginning(swiper.isBeginning);
-              setIsEnd(swiper.isEnd);
+            onReachEnd={() => setIsEnd(true)}
+            onReachBeginning={() => setIsBeginning(true)}
+            onFromEdge={() => {
+              setIsEnd(false);
+              setIsBeginning(false);
             }}
             slidesPerView={3}
             spaceBetween={40}
             modules={[Navigation]}
-            allowTouchMove={false} // Disable swiping/touch interactions
+            allowTouchMove={false}
             slideToClickedSlide={false}
             breakpoints={{
               320: {
@@ -102,10 +100,10 @@ const Testimonials_Sec = () => {
             ))}
           </Swiper>
 
-          {/* Custom navigation buttons */}
-          {/* Prev button - hidden when on the first slide */}
           <div
             ref={prevRef}
+            aria-label="Previous Slide"
+            tabIndex="0"
             className={`custom-prev absolute left-[1rem] top-1/2 z-10 inline-flex min-h-[4.4rem] min-w-[4.4rem] -translate-y-1/2 cursor-pointer items-center justify-center rounded-[50%] bg-primaryColor transition-all duration-[0.1s] active:scale-[0.9] ${
               isBeginning
                 ? "pointer-events-none opacity-0"
@@ -124,9 +122,10 @@ const Testimonials_Sec = () => {
             </svg>
           </div>
 
-          {/* Next button - hidden when on the last slide */}
           <div
             ref={nextRef}
+            aria-label="Next Slide"
+            tabIndex="0"
             className={`custom-next absolute right-[1rem] top-1/2 z-10 inline-flex min-h-[4.4rem] min-w-[4.4rem] -translate-y-1/2 cursor-pointer items-center justify-center rounded-[50%] bg-primaryColor transition-all duration-[0.1s] active:scale-[0.9] ${
               isEnd
                 ? "pointer-events-none opacity-0"

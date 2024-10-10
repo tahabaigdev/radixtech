@@ -32,7 +32,7 @@ const Hero_Sec = () => {
       <div className="container relative z-[1] py-[8rem]">
         <div className="grid grid-cols-1 items-center gap-[8rem] xl:grid-cols-2">
           <motion.div
-            className="flex flex-col items-center text-center sm:items-start sm:text-left"
+            className="flex flex-col items-center text-center xl:items-start xl:text-left"
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -42,7 +42,7 @@ const Hero_Sec = () => {
               RadixTech: Where data meets impact.
             </h1>
 
-            <p className="mb-[4rem] mt-[2rem] text-[1.6rem] font-medium leading-[3.2rem] text-textPrimary">
+            <p className="mb-[4rem] mt-[2rem] max-w-[60rem] text-[1.6rem] font-medium leading-[3.2rem] text-textPrimary xl:max-w-fit">
               RadixTech offers simplified digital platforms and services to
               support data-driven decisions in real time for aid workers and
               development practitioners.
@@ -50,7 +50,7 @@ const Hero_Sec = () => {
 
             <Common_Btn link="/contact" linkText="Why Choose Us" />
 
-            <div className="mt-[4rem] flex items-center gap-[2rem]">
+            {/* <div className="mt-[4rem] flex items-center gap-[2rem]">
               <div>
                 <ul className="flex items-center">
                   {[
@@ -77,42 +77,42 @@ const Hero_Sec = () => {
 
                 <img src={RatingStar} alt="Rating Star" />
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
-            className="relative overflow-hidden rounded-[1.2rem]"
+            className="flex justify-center xl:justify-end"
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5, delay: 0.3 }}
             variants={rightColumnVariants}
           >
-            <div className="aspect-[1/1.3] w-[100%] sm:aspect-[1/1]">
+            <div className="relative h-[50rem] w-[50rem] overflow-hidden rounded-[1.2rem]">
               <img
                 src={HeroImg}
                 alt="Hero Image"
                 className="h-[100%] w-[100%]"
               />
-            </div>
 
-            <div className="absolute bottom-0 right-0 bg-[#faf8f5] px-[2rem] py-[4rem] md:max-w-[45rem] md:rounded-tl-[6rem]">
-              <ul className="flex flex-wrap justify-center gap-[1.4rem] md:justify-end">
-                {[
-                  "Statistical Analysis",
-                  "Product Development",
-                  "Data Management",
-                  "Machine Learning",
-                  "MEAL & MIS",
-                  "Geographic Information Systems",
-                ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="inline-flex rounded-[3.4rem] border border-solid border-textPrimary px-[1.5rem] py-[.4rem] text-[1.6rem] font-medium text-textPrimary"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div className="absolute bottom-0 right-0 bg-[#faf8f5] px-[2rem] py-[2rem] md:max-w-[38rem] md:rounded-tl-[6rem]">
+                <ul className="flex flex-wrap justify-center gap-[1.4rem] md:justify-end">
+                  {[
+                    "Statistical Analysis",
+                    "Product Development",
+                    "Data Management",
+                    "Machine Learning",
+                    "MEAL & MIS",
+                    "Geographic Information Systems",
+                  ].map((item, i) => (
+                    <li
+                      key={i}
+                      className="inline-flex rounded-[3.4rem] border border-solid border-textPrimary px-[1.5rem] py-[.4rem] text-[1.2rem] font-medium text-textPrimary"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </motion.div>
         </div>

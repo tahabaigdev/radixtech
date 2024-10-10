@@ -62,7 +62,7 @@ export const navLinks = [
   },
 ];
 
-export const portfolioData = [
+export const dataHubData = [
   {
     id: 0,
     imgUrl: PortfolioImg1,
@@ -365,25 +365,25 @@ export const mainLinks = [
 export const socialLinksData = [
   {
     id: 0,
-    link: "",
-    icon: IoLogoInstagram,
+    link: "https://www.linkedin.com/company/weareradix/",
+    icon: FaLinkedinIn,
   },
 
   {
     id: 1,
-    link: "",
+    link: "https://www.youtube.com/@weareRadixtech",
     icon: FaYoutube,
   },
 
   {
     id: 2,
-    link: "",
-    icon: FaLinkedinIn,
+    link: "https://www.facebook.com/weareradix/",
+    icon: FaFacebookF,
   },
 
   {
     id: 3,
-    link: "",
-    icon: FaFacebookF,
+    link: "https://www.instagram.com/radixtechinsight/",
+    icon: IoLogoInstagram,
   },
 ];

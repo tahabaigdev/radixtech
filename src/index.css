@@ -71,7 +71,11 @@
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  animation: scroller 30s linear infinite;
+  animation: scroller 20s linear infinite;
+}
+
+.scroller:hover .scroller-in {
+  animation-play-state: paused;
 }
 
 .scroller-in .scroller-content {

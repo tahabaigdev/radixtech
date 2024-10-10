@@ -1,6 +1,7 @@
 import ClientLogo1 from "../../assets/images/client-logo-1.png";
 import ClientLogo2 from "../../assets/images/client-logo-2.png";
 import ClientLogo3 from "../../assets/images/client-logo-3.png";
+import ClientLogo4 from "../../assets/images/client-logo-4.png";
 
 const Client_Sec = () => {
   return (
@@ -19,13 +20,11 @@ const Client_Sec = () => {
                 ClientLogo1,
                 ClientLogo2,
                 ClientLogo3,
+                ClientLogo4,
                 ClientLogo1,
                 ClientLogo2,
                 ClientLogo3,
-                ClientLogo2,
-                ClientLogo3,
-                ClientLogo1,
-                ClientLogo2,
+                ClientLogo4,
               ].map((item, idx) => (
                 <div key={idx} className="scroller-content min-w-[17rem]">
                   <img src={item} alt="Client logo" />
@@ -38,13 +37,11 @@ const Client_Sec = () => {
                 ClientLogo1,
                 ClientLogo2,
                 ClientLogo3,
+                ClientLogo4,
                 ClientLogo1,
                 ClientLogo2,
                 ClientLogo3,
-                ClientLogo2,
-                ClientLogo3,
-                ClientLogo1,
-                ClientLogo2,
+                ClientLogo4,
               ].map((item, idx) => (
                 <div
                   key={idx}

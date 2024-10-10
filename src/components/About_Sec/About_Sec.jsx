@@ -34,7 +34,7 @@ const About_Sec = () => {
             <img
               src={AboutSecImg}
               alt="About Image"
-              className="h-[90%] w-[90%] rounded-[1.2rem] object-cover object-center"
+              className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center sm:h-[50%] sm:w-[50%] xl:h-[90%] xl:w-[90%]"
             />
           </motion.div>
 
@@ -45,7 +45,7 @@ const About_Sec = () => {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center sm:text-left"
+            className="order-[-1] text-center xl:order-2 xl:text-left"
           >
             <Common_Heading
               title="We specialize in innovative digital solutions"
@@ -53,7 +53,7 @@ const About_Sec = () => {
               subTitleColor="#4F4F4F"
             />
 
-            <p className="mt-[3rem] text-[1.8rem] font-medium leading-[3.24rem]">
+            <p className="mx-auto mt-[3rem] max-w-[70rem] text-[1.8rem] font-medium leading-[3.24rem] xl:mx-0 xl:max-w-full">
               At RadixTech, we specialize in innovative digital solutions across
               key sectors such as ICT, ICT4D (Information and Communication
               Technology for Development), MEAL (Monitoring, Evaluation,
