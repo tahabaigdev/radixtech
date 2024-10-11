@@ -82,7 +82,7 @@ const Header = () => {
                   <NavLink
                     to={item.link}
                     onClick={handleNavlinkClick}
-                    className="nav-item inline-flex w-[100%] items-center justify-between gap-[.5rem] px-[1.6rem] py-[1.2rem] text-[1.4rem] font-semibold leading-[2.24rem] text-textPrimary hover:text-blackColor hover:underline xl:w-auto xl:justify-normal"
+                    className="nav-item inline-flex w-[100%] items-center justify-between gap-[.5rem] px-[1.6rem] py-[1.2rem] text-[1.4rem] font-medium leading-[2.24rem] text-textPrimary hover:text-blackColor hover:underline xl:w-auto xl:justify-normal"
                   >
                     {item.linkText}
                     <ChevronDown

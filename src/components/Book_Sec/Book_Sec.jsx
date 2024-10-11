@@ -1,5 +1,5 @@
 import { Calendar } from "lucide-react";
-import CtaImage from "../../assets/images/cta-image.svg";
+import CtaImage from "../../assets/images/schedule-img.jpg";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 

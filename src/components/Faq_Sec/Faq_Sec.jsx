@@ -48,9 +48,41 @@ const Faq_Sec = () => {
                   title="What is AI in CRM?"
                   content="AI in CRM refers to the use of artificial intelligence technologies, such as machine learning and natural language processing, to improve customer relationship management. It enables businesses to automate and optimise CRM activities, such as lead management, customer segmentation, and sales forecasting."
                 />
+
+                <Accordion
+                  title="What is AI in CRM?"
+                  content="AI in CRM refers to the use of artificial intelligence technologies, such as machine learning and natural language processing, to improve customer relationship management. It enables businesses to automate and optimise CRM activities, such as lead management, customer segmentation, and sales forecasting."
+                />
+
+                <Accordion
+                  title="What is AI in CRM?"
+                  content="AI in CRM refers to the use of artificial intelligence technologies, such as machine learning and natural language processing, to improve customer relationship management. It enables businesses to automate and optimise CRM activities, such as lead management, customer segmentation, and sales forecasting."
+                />
               </div>
             )}
-            {activeTab === "AI" && <div>Content for AI FAQ</div>}
+            {activeTab === "AI" && (
+              <div>
+                <Accordion
+                  title="What is AI in CRM?"
+                  content="AI in CRM refers to the use of artificial intelligence technologies, such as machine learning and natural language processing, to improve customer relationship management. It enables businesses to automate and optimise CRM activities, such as lead management, customer segmentation, and sales forecasting."
+                />
+
+                <Accordion
+                  title="What is AI in CRM?"
+                  content="AI in CRM refers to the use of artificial intelligence technologies, such as machine learning and natural language processing, to improve customer relationship management. It enables businesses to automate and optimise CRM activities, such as lead management, customer segmentation, and sales forecasting."
+                />
+
+                <Accordion
+                  title="What is AI in CRM?"
+                  content="AI in CRM refers to the use of artificial intelligence technologies, such as machine learning and natural language processing, to improve customer relationship management. It enables businesses to automate and optimise CRM activities, such as lead management, customer segmentation, and sales forecasting."
+                />
+
+                <Accordion
+                  title="What is AI in CRM?"
+                  content="AI in CRM refers to the use of artificial intelligence technologies, such as machine learning and natural language processing, to improve customer relationship management. It enables businesses to automate and optimise CRM activities, such as lead management, customer segmentation, and sales forecasting."
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
