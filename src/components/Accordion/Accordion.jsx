@@ -28,7 +28,7 @@ const Accordion = ({ title, content }) => {
 
       <div
         ref={contentRef}
-        className="transition-max-height overflow-hidden duration-300"
+        className="overflow-hidden"
         style={{
           maxHeight: isActive ? `${contentRef.current.scrollHeight}px` : "0px",
         }}

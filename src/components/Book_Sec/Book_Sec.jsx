@@ -1,7 +1,9 @@
-import { Calendar } from "lucide-react";
+import { ArrowUpRight, Calendar } from "lucide-react";
 import CtaImage from "../../assets/images/schedule-img.jpg";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Common_Btn_3 from "../../styles/Common_Btn/Common_Btn_3";
+import { NavLink } from "react-router-dom";
 
 const Book_Sec = () => {
   const [ref, inView] = useInView({
@@ -21,7 +23,7 @@ const Book_Sec = () => {
 
   return (
     <section ref={ref} className="overflow-x-hidden">
-      <div className="container py-[8rem] xl:py-[10rem]">
+      <div className="container py-[2.1rem]">
         <div className="grid h-[100%] w-[100%] grid-cols-1 items-center gap-[4rem] bg-primaryColor p-[4rem] lg:grid-cols-2">
           <motion.div
             variants={leftColumnVariants}
@@ -30,7 +32,7 @@ const Book_Sec = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h3 className="text-center text-[4rem] font-medium leading-[5rem] tracking-[-0.64px] text-whiteColor sm:text-[5rem] sm:leading-[6rem] lg:text-left">
-              Schedule a demo
+              We’d love to hear from you
             </h3>
 
             <p className="mb-[4rem] mt-[1rem] text-center text-[1.8rem] font-medium leading-[3.24rem] text-whiteColor lg:text-left">
@@ -39,13 +41,25 @@ const Book_Sec = () => {
               and development work.
             </p>
 
-            <div className="text-center lg:text-left">
-              <a
-                href="mailto:info@RadixTech.org"
-                className="inline-flex h-[4.8rem] min-w-[14.8475rem] items-center justify-center gap-[1rem] bg-blackColor px-[2rem] py-[1.2rem] text-[1.6rem] font-semibold leading-[2.4rem] text-whiteColor"
-              >
-                Schedule a demo <Calendar />
-              </a>
+            <div className="flex flex-col items-center gap-[1rem] sm:flex-row">
+              <div className="text-center lg:text-left">
+                <a
+                  href="mailto:info@RadixTech.org"
+                  className="font- hover:bg-tertiaryColor inline-flex h-[4.8rem] min-w-[14.8475rem] items-center justify-center gap-[1rem] bg-blackColor px-[2rem] py-[1.2rem] text-[1.6rem] leading-[2.4rem] text-whiteColor transition-all duration-[0.3s] hover:text-blackColor"
+                >
+                  Schedule a demo <Calendar />
+                </a>
+              </div>
+
+              <div>
+                <a
+                  href=""
+                  className="bg-tertiaryColor font-me inline-flex h-[4.8rem] min-w-[14.5rem] items-center justify-center gap-[1rem] px-[2rem] py-[1.2rem] text-blackColor transition-all duration-[0.3s] hover:bg-blackColor hover:text-whiteColor"
+                >
+                  <span className="text-[1.6rem]">Get in Touch</span>{" "}
+                  <ArrowUpRight className="h-[2rem] w-[2rem]" />
+                </a>
+              </div>
             </div>
           </motion.div>
 

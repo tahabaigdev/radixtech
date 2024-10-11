@@ -27,7 +27,7 @@ const Insights_Sec = () => {
 
   return (
     <section className="overflow-x-hidden bg-whiteColor">
-      <div className="container py-[8rem] xl:py-[10rem]">
+      <div className="container py-[2.1rem]">
         {/* Heading Section */}
         <div className="flex items-start justify-center gap-[8rem] xl:justify-between">
           <motion.div

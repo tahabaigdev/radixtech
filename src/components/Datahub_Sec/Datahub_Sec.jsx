@@ -18,8 +18,8 @@ const Datahub_Sec = () => {
   });
 
   return (
-    <section className="overflow-x-hidden">
-      <div className="container py-[8rem] xl:py-[10rem]">
+    <section className="bg-tertiaryColor overflow-x-hidden">
+      <div className="container py-[2.1rem]">
         <motion.div
           ref={headingRef}
           initial="hidden"

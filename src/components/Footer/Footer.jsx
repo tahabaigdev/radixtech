@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="grid grid-cols-2 border-t border-solid border-[#e9e2da] lg:border-t-0 xl:grid-cols-4">
             <div className="flex justify-between gap-[4rem] p-[2rem] sm:p-[4rem]">
               <div className="flex flex-col gap-[2rem]">
-                <h5 className="text-[1.2rem] font-semibold uppercase leading-[15.6px] tracking-[0.4px] text-blackColor">
+                <h5 className="text-[1.2rem] font-semibold uppercase leading-[15.6px] tracking-[0.4px] text-blackColor text-primaryColor">
                   MAIN LINKS
                 </h5>
 
@@ -62,7 +62,7 @@ const Footer = () => {
 
             <div className="flex justify-between gap-[4rem] p-[2rem] sm:p-[4rem]">
               <div className="flex flex-col gap-[2rem]">
-                <h5 className="text-[1.2rem] font-semibold uppercase leading-[15.6px] tracking-[0.4px] text-blackColor">
+                <h5 className="text-[1.2rem] font-semibold uppercase leading-[15.6px] tracking-[0.4px] text-blackColor text-primaryColor">
                   PRODUCT
                 </h5>
 
@@ -83,7 +83,7 @@ const Footer = () => {
 
             <div className="flex justify-between gap-[4rem] p-[2rem] sm:p-[4rem]">
               <div className="flex flex-col gap-[2rem]">
-                <h5 className="text-[1.2rem] font-semibold uppercase leading-[15.6px] tracking-[0.4px] text-blackColor">
+                <h5 className="text-[1.2rem] font-semibold uppercase leading-[15.6px] tracking-[0.4px] text-blackColor text-primaryColor">
                   PERSONA
                 </h5>
 
@@ -104,7 +104,7 @@ const Footer = () => {
 
             <div className="flex justify-between gap-[4rem] p-[2rem] sm:p-[4rem]">
               <div className="flex flex-col gap-[2rem]">
-                <h5 className="text-[1.2rem] font-semibold uppercase leading-[15.6px] tracking-[0.4px] text-blackColor">
+                <h5 className="text-[1.2rem] font-semibold uppercase leading-[15.6px] tracking-[0.4px] text-blackColor text-primaryColor">
                   PERSONA
                 </h5>
 

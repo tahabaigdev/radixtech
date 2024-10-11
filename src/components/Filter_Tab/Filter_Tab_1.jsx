@@ -32,7 +32,7 @@ const Filter_Tab_1 = () => {
               className={`inline-flex h-[4rem] min-w-[4.7rem] items-center justify-center rounded-[2rem] px-[1.6rem] py-[1.2rem] text-[1.6rem] font-medium leading-[2.4rem] text-blackColor transition-colors duration-200 ${
                 activeIndex === idx
                   ? "text-white bg-primaryColor text-whiteColor"
-                  : "bg-[#F3F2EE] hover:bg-whiteColor"
+                  : "bg-[#eeede9] hover:bg-whiteColor"
               }`}
             >
               {item}

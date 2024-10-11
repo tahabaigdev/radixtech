@@ -20,8 +20,8 @@ const About_Sec = () => {
   };
 
   return (
-    <section ref={ref} className="overflow-x-hidden bg-[#FDD566]">
-      <div className="container py-[8rem] xl:py-[10rem]">
+    <section ref={ref} className="overflow-x-hidden bg-secondaryColor">
+      <div className="container py-[2.1rem]">
         <div className="grid grid-cols-1 items-center gap-[4rem] xl:grid-cols-2">
           {/* Left Column */}
           <motion.div
@@ -50,10 +50,11 @@ const About_Sec = () => {
             <Common_Heading
               title="We specialize in innovative digital solutions"
               subTitle="About Us"
-              subTitleColor="#4F4F4F"
+              titleColor="#ffffff"
+              subTitleColor="#ffffff"
             />
 
-            <p className="mx-auto mt-[3rem] max-w-[70rem] text-[1.8rem] font-medium leading-[3.24rem] xl:mx-0 xl:max-w-full">
+            <p className="mx-auto mt-[3rem] max-w-[70rem] text-[1.8rem] font-medium leading-[3.24rem] text-whiteColor xl:mx-0 xl:max-w-full">
               At RadixTech, we specialize in innovative digital solutions across
               key sectors such as ICT, ICT4D (Information and Communication
               Technology for Development), MEAL (Monitoring, Evaluation,

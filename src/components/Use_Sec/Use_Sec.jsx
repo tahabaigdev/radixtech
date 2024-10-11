@@ -3,20 +3,20 @@ import Filter_Tab_1 from "../Filter_Tab/Filter_Tab_1";
 
 const Use_Sec = () => {
   return (
-    <section className="overflow-x-hidden">
-      <div className="container pb-[8rem] xl:pb-[10rem]">
+    <section className="bg-tertiaryColor overflow-x-hidden">
+      <div className="container py-[2.1rem]">
         <div className="flex justify-center text-center xl:justify-start xl:text-left">
           <div>
             <Common_Heading
-              title="Unify all your data + AI"
-              subTitle="USE CASES"
+              title="Learn what RadixTech products can do for you."
+              subTitle="Platforms"
               titleColor="#000000"
               subTitleColor="#4F4F4F"
             />
           </div>
         </div>
 
-        <div className="mt-[8rem]">
+        <div className="mt-[4rem]">
           <Filter_Tab_1 />
         </div>
       </div>

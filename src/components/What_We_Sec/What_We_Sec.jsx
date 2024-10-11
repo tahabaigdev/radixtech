@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 const What_We_Sec = () => {
   // Animation variant for fade in
   const fadeInVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 10 },
     visible: { opacity: 1, y: 0 },
   };
 
@@ -17,8 +17,8 @@ const What_We_Sec = () => {
   });
 
   return (
-    <section className="overflow-x-hidden bg-[#FDD566]">
-      <div className="container py-[8rem] xl:py-[10rem]">
+    <section className="overflow-x-hidden">
+      <div className="container py-[2.1rem]">
         <div className="flex items-start justify-center gap-[8rem] text-center xl:justify-between xl:text-left">
           <motion.div
             ref={headingRef}

@@ -1,11 +1,6 @@
 import BgGrid from "../../assets/images/grid.svg";
 import Common_Btn from "../../styles/Common_Btn/Common_Btn";
-import HeroAvatar1 from "../../assets/images/hero-avatar-1.avif";
-import HeroAvatar2 from "../../assets/images/hero-avatar-2.avif";
-import HeroAvatar3 from "../../assets/images/hero-avatar-3.avif";
-import HeroAvatar4 from "../../assets/images/hero-avatar-4.avif";
-import HeroAvatar5 from "../../assets/images/hero-avatar-5.avif";
-import RatingStar from "../../assets/images/rating-star.svg";
+import Common_Btn_3 from "../../styles/Common_Btn/Common_Btn_3";
 import HeroImg from "../../assets/images/hero-img.gif";
 import { motion } from "framer-motion";
 
@@ -29,7 +24,7 @@ const Hero_Sec = () => {
         className="absolute left-[50%] top-0 translate-x-[-50%]"
       />
 
-      <div className="container relative z-[1] py-[8rem]">
+      <div className="container relative z-[1] py-[2.1rem]">
         <div className="grid grid-cols-1 items-center gap-[8rem] xl:grid-cols-2">
           <motion.div
             className="flex flex-col items-center text-center xl:items-start xl:text-left"
@@ -38,46 +33,23 @@ const Hero_Sec = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             variants={leftColumnVariants}
           >
-            <h1 className="text-[4.5rem] font-bold leading-[5.5rem] tracking-[-2px] text-blackColor sm:text-[6rem] sm:leading-[7rem]">
-              RadixTech: Where data meets impact.
+            <h1 className="text-[4rem] font-bold leading-[5rem] tracking-[-2px] text-blackColor sm:text-[5rem] sm:leading-[6rem]">
+              Empowering with Data-Driven Solutions
             </h1>
 
             <p className="mb-[4rem] mt-[2rem] max-w-[60rem] text-[1.6rem] font-medium leading-[3.2rem] text-textPrimary xl:max-w-fit">
-              RadixTech offers simplified digital platforms and services to
-              support data-driven decisions in real time for aid workers and
-              development practitioners.
+              RadixTech specializes in providing simplified digital platforms
+              and services designed to enable real-time, data-driven
+              decision-making. We serve aid workers and development
+              practitioners, helping them manage both emergency responses and
+              sustainable development projects efficiently.
             </p>
 
-            <Common_Btn link="/contact" linkText="Why Choose Us" />
+            <div className="flex items-center gap-[1rem]">
+              <Common_Btn link="/contact" linkText="Explore" />
 
-            {/* <div className="mt-[4rem] flex items-center gap-[2rem]">
-              <div>
-                <ul className="flex items-center">
-                  {[
-                    HeroAvatar1,
-                    HeroAvatar2,
-                    HeroAvatar3,
-                    HeroAvatar4,
-                    HeroAvatar5,
-                  ].map((item, i) => (
-                    <li
-                      key={i}
-                      className="hero-avatar h-[4.8rem] w-[4.8rem] overflow-hidden rounded-[50%] border-[2px] border-solid border-[#faf8f5]"
-                    >
-                      <img src={item} alt="Avatar Image" />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="flex flex-col gap-[.4rem]">
-                <h4 className="text-[2rem] font-medium text-[#333333]">
-                  4.5 Stars
-                </h4>
-
-                <img src={RatingStar} alt="Rating Star" />
-              </div>
-            </div> */}
+              <Common_Btn_3 link="/contact" linkText="Get in touch" />
+            </div>
           </motion.div>
 
           <motion.div

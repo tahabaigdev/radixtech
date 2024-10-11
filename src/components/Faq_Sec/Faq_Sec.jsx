@@ -8,11 +8,11 @@ const Faq_Sec = () => {
 
   return (
     <section>
-      <div className="container py-[8rem] xl:py-[10rem]">
+      <div className="container py-[2.1rem]">
         <div className="flex justify-center text-center xl:justify-start xl:text-left">
           <div>
             <Common_Heading
-              title="Salesforce CRM for Small Business FAQ"
+              title="CRM for Small Business FAQ"
               subTitle="Faq"
               titleColor="#000000"
               subTitleColor="#4F4F4F"
@@ -36,7 +36,7 @@ const Faq_Sec = () => {
                 className={`inline-flex px-[2.4rem] py-[1.6rem] text-[1.6rem] font-bold leading-[2.4rem] tracking-[-0.08px] ${activeTab === "AI" ? "border-b-[4px] border-primaryColor" : "border-b-[4px] border-[transparent]"}`}
                 onClick={() => setActiveTab("AI")}
               >
-                Artificial Intelligence for Small Business
+                Artificial Intelligence
               </button>
             </li>
           </ul>

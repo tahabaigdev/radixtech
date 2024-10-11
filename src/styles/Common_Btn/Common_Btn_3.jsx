@@ -1,13 +1,13 @@
 import { ArrowUpRight } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
-const Common_Btn = ({ link, linkText }) => {
+const Common_Btn_3 = ({ link, linkText }) => {
   return (
     <>
       <div>
         <NavLink
           to={link}
-          className="inline-flex h-[4rem] min-w-[13rem] items-center justify-center gap-[1rem] rounded-[.5rem] bg-primaryColor px-[2rem] py-[1.2rem] transition-all duration-[0.3s] hover:bg-secondaryColor"
+          className="inline-flex h-[4rem] min-w-[13rem] items-center justify-center gap-[1rem] rounded-[.5rem] bg-secondaryColor px-[2rem] py-[1.2rem] transition-all duration-[0.3s] hover:bg-primaryColor"
         >
           <span className="text-[1.6rem] font-medium text-whiteColor">
             {linkText}
@@ -19,4 +19,4 @@ const Common_Btn = ({ link, linkText }) => {
   );
 };
 
-export default Common_Btn;
+export default Common_Btn_3;
