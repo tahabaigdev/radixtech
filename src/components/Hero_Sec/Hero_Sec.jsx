@@ -46,11 +46,8 @@ const Hero_Sec = () => {
 
             <p className="mb-[4rem] mt-[2rem] max-w-[60rem] text-[1.6rem] font-medium leading-[3.2rem] text-textPrimary xl:max-w-fit">
               RadixTech delivers platforms and services specifically designed
-              for aid workers and development practitioners.{" "}
-              <span className="bg-[#FEF7BD]">
-                Our solutions simplify processes, transforming data into
-                actionable insights
-              </span>{" "}
+              for aid workers and development practitioners. Our solutions
+              simplify processes, transforming data into actionable insights
               that enable real-time decision-making. With extensive experience
               in humanitarian response and sustainable development projects,{" "}
               <span className="bg-[#FEF7BD]">
@@ -62,7 +59,7 @@ const Hero_Sec = () => {
 
             <div className="flex items-center gap-[1rem]">
               <Common_Btn
-                onClick={() => scrollHandler("solutions")}
+                onClick={() => scrollHandler("services")}
                 linkText="Explore"
               />
 

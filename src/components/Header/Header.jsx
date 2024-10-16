@@ -102,8 +102,8 @@ const Header = () => {
                         handleScroll={() => scrollHandler(item.arg)}
                       />
                     )}
-                  {activeDropdown === "Solutions" &&
-                    item.linkText === "Solutions" && (
+                  {activeDropdown === "Services" &&
+                    item.linkText === "Services" && (
                       <Solutions_Dropdown
                         handleScroll={() => scrollHandler(item.arg)}
                       />

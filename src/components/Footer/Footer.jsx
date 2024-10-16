@@ -27,7 +27,7 @@ const Footer = () => {
           <img
             src={BrandRedIcon}
             alt="Icon"
-            className="absolute bottom-[-11rem] right-[-6rem] z-[-1] w-[30%] opacity-5"
+            className="absolute bottom-0 right-0 z-[-1] w-[50%] opacity-5 sm:w-[40%] xl:bottom-[-11rem] xl:right-[-6rem] xl:w-[30%]"
           />
 
           <div className="flex flex-col justify-between gap-[1.5rem] border-solid border-[#e9e2da] p-[2rem] lg:border-r lg:p-[4rem] xl:min-w-max">
@@ -80,7 +80,7 @@ const Footer = () => {
                   {platformFirstColumnDropdownLinks.map((item) => (
                     <li key={item.id}>
                       <button
-                        onClick={() => scrollHandler(item.arg)}
+                        onClick={() => scrollHandler("platform")}
                         className="text-left text-[1.4rem] font-medium capitalize leading-[2.24rem] text-blackColor transition-all duration-[0.3s] ease-in hover:text-primaryColor"
                       >
                         {item.text}

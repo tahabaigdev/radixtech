@@ -90,7 +90,7 @@ const Products_Sec = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="grid grid-cols-1 gap-[4rem] md:grid-cols-2">
             <Swiper
               onSwiper={(swiper) => (swiperRef.current = swiper)}
               allowTouchMove={false}
@@ -102,25 +102,25 @@ const Products_Sec = () => {
                     <img
                       src={slide}
                       alt={`Slide ${idx + 1}`}
-                      className="h-[50%] w-[50%] rounded-[1.2rem] object-cover object-center"
+                      className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center"
                     />
                   </div>
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
-        </div>
 
-        <div className="mt-[2rem]">
-          {getAccordionData(activeIndex).map((item, idx) => (
-            <Accordion3
-              key={idx}
-              title={item.title}
-              list={item.list}
-              isActive={activeAccordion === idx}
-              onClick={() => handleAccordionClick(idx)}
-            />
-          ))}
+            <div>
+              {getAccordionData(activeIndex).map((item, idx) => (
+                <Accordion3
+                  key={idx}
+                  title={item.title}
+                  list={item.list}
+                  isActive={activeAccordion === idx}
+                  onClick={() => handleAccordionClick(idx)}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

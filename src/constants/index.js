@@ -10,7 +10,6 @@ import TestimonialsAvatar3 from "../assets/images/testimonials-avatar-3.avif";
 import TestimonialsAvatar4 from "../assets/images/testimonials-avatar-4.avif";
 import TestimonialsAvatar5 from "../assets/images/testimonials-avatar-5.avif";
 import TestimonialsAvatar6 from "../assets/images/testimonials-avatar-6.avif";
-import UseCaseImg1 from "../assets/images/use-case-img-1.jpg";
 import DataServicesImg from "../assets/images/data-services.gif";
 import ReportingServicesImg from "../assets/images/reporting-services.gif";
 import Ict4dImg from "../assets/images/ict4d.gif";
@@ -18,22 +17,7 @@ import CapacityBuildingImg from "../assets/images/capacity-building.gif";
 import GisImg from "../assets/images/gis.gif";
 import AmlImg from "../assets/images/aml.gif";
 import DmaImg from "../assets/images/dma.gif";
-import {
-  BadgeInfo,
-  BookCheck,
-  Boxes,
-  BrainCircuit,
-  ChartPie,
-  ChevronsLeftRightEllipsis,
-  Cpu,
-  Database,
-  NotepadText,
-  Ratio,
-  ScanBarcode,
-  Settings,
-  User,
-  Users,
-} from "lucide-react";
+import { BrainCircuit, Cpu, Ratio, ScanBarcode } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn, FaUsers, FaYoutube } from "react-icons/fa";
 import { IoIosCodeWorking, IoLogoInstagram } from "react-icons/io";
 import { RiDashboard2Line, RiUserSmileLine } from "react-icons/ri";
@@ -77,6 +61,8 @@ import { FaTruckFieldUn, FaUsersViewfinder } from "react-icons/fa6";
 import { GoWorkflow } from "react-icons/go";
 import { GiMeshNetwork } from "react-icons/gi";
 import { CiCalendar } from "react-icons/ci";
+import InsightsImage from "../assets/images/insights.gif";
+import PodcastImage from "../assets/images/podcast.gif";
 
 export const navLinks = [
   {
@@ -87,8 +73,8 @@ export const navLinks = [
 
   {
     id: 1,
-    linkText: "Solutions",
-    arg: "solutions",
+    linkText: "Services",
+    arg: "services",
   },
 
   {
@@ -178,7 +164,7 @@ export const insightsData = [
   {
     id: 0,
     link: "https://www.linkedin.com/posts/weareradix_datadrivendialogues-digitalinnovation-datadrivendecisionmaking-activity-7250648143707459584-NZPT?utm_source=share&utm_medium=member_desktop",
-    imgUrl: InsightsImg1,
+    imgUrl: PodcastImage,
     title: "Podcast",
     description: `"Data-Driven Dialogues" podcast offer guidance on navigating the complexities of data, technology, and digital transformation. Provides valuable advice, inspiring case studies, and practical coaching sessions.`,
   },
@@ -186,7 +172,7 @@ export const insightsData = [
   {
     id: 1,
     link: "https://www.linkedin.com/posts/weareradix_podcast-datadriven-podcast-activity-7249747893610287104-_DiW?utm_source=share&utm_medium=member_desktop",
-    imgUrl: InsightsImg2,
+    imgUrl: InsightsImage,
     title: "Insights",
     description:
       "We cover pertinent questions, provides practical advice and strategies to navigate data, technology, and digital transformation, helping professionals unlock innovative solutions.",

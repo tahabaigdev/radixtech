@@ -15,7 +15,7 @@ const Accordion = ({ title, content, list }) => {
         className="group flex w-[100%] cursor-pointer select-none items-center justify-between"
         onClick={toggleAccordion}
       >
-        <h5 className="text-[1.8rem] font-semibold leading-[2.4rem] text-primaryColor group-hover:text-blackColor">
+        <h5 className="text-[1.8rem] font-semibold leading-[2.4rem] text-blackColor group-hover:text-primaryColor">
           {title}
         </h5>
 

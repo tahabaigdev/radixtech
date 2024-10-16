@@ -48,7 +48,7 @@ const Insights_Sec = () => {
         </div>
 
         {/* Insights Data Section */}
-        <div className="mx-auto mt-[4rem] grid max-w-[115rem] grid-cols-1 gap-[4rem] sm:grid-cols-2">
+        <div className="mx-auto mt-[4rem] grid grid-cols-1 gap-[4rem] sm:grid-cols-2">
           {insightsData.map((item, index) => {
             // Set up `useInView` for each column
             const [ref, inView] = useInView({
@@ -72,7 +72,7 @@ const Insights_Sec = () => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <div className="flex flex-col gap-[1rem]">
-                  <div className="aspect-[1.5/1] overflow-hidden rounded-[1.2rem]">
+                  <div className="aspect-[1.5/1] overflow-hidden rounded-[1.2rem] border border-[#e9e2da] shadow-shadow2">
                     <img
                       src={item.imgUrl}
                       alt="Blog Image"
