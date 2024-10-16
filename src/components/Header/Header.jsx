@@ -47,22 +47,25 @@ const Header = () => {
     }
   };
 
-  const handleNavlinkClick = (event) => {
-    event.preventDefault();
-  };
-
   // Toggle hamburger menu
   const toggleHamburger = () => {
     setIsHamburgerOpen(!isHamburgerOpen);
+  };
+
+  const scrollHandler = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <header className="sticky left-0 top-0 z-[998] border-b border-solid border-[rgb(233_226_218)] bg-whiteColor">
       <div className="container flex items-center justify-between py-[2rem]">
         <div className="inline-flex flex-1 items-center">
-          <NavLink to="/">
+          <button onClick={() => scrollHandler("hero")}>
             <img src={BrandLogo} alt="Brand Logo" className="max-w-[16rem]" />
-          </NavLink>
+          </button>
         </div>
 
         <div
@@ -79,9 +82,8 @@ const Header = () => {
                   }
                   onMouseLeave={closeDropdown}
                 >
-                  <NavLink
-                    to={item.link}
-                    onClick={handleNavlinkClick}
+                  <button
+                    onClick={() => scrollHandler(item.arg)}
                     className="nav-item inline-flex w-[100%] items-center justify-between gap-[.5rem] px-[1.6rem] py-[1.2rem] text-[1.4rem] font-medium leading-[2.24rem] text-textPrimary hover:text-blackColor hover:underline xl:w-auto xl:justify-normal"
                   >
                     {item.linkText}
@@ -91,19 +93,39 @@ const Header = () => {
                       }`}
                       onClick={() => toggleDropdown(item.linkText)}
                     />
-                  </NavLink>
+                  </button>
 
                   {/* Render dropdowns */}
                   {activeDropdown === "Platforms" &&
-                    item.linkText === "Platforms" && <Platform_Dropdown />}
+                    item.linkText === "Platforms" && (
+                      <Platform_Dropdown
+                        handleScroll={() => scrollHandler(item.arg)}
+                      />
+                    )}
                   {activeDropdown === "Solutions" &&
-                    item.linkText === "Solutions" && <Solutions_Dropdown />}
+                    item.linkText === "Solutions" && (
+                      <Solutions_Dropdown
+                        handleScroll={() => scrollHandler(item.arg)}
+                      />
+                    )}
                   {activeDropdown === "Insights" &&
-                    item.linkText === "Insights" && <Insights_Dropdown />}
+                    item.linkText === "Insights" && (
+                      <Insights_Dropdown
+                        handleScroll={() => scrollHandler(item.arg)}
+                      />
+                    )}
                   {activeDropdown === "Why RadixTech" &&
-                    item.linkText === "Why RadixTech" && <Why_Dropdown />}
+                    item.linkText === "Why RadixTech" && (
+                      <Why_Dropdown
+                        handleScroll={() => scrollHandler(item.arg)}
+                      />
+                    )}
                   {activeDropdown === "About Us" &&
-                    item.linkText === "About Us" && <About_Dropdown />}
+                    item.linkText === "About Us" && (
+                      <About_Dropdown
+                        handleScroll={() => scrollHandler(item.arg)}
+                      />
+                    )}
                 </li>
               ))}
             </ul>
@@ -112,7 +134,10 @@ const Header = () => {
 
         <div className="flex flex-1 items-center justify-end gap-[1rem]">
           <div>
-            <Common_Btn link="/contact" linkText="Contact Us" />
+            <Common_Btn
+              onClick={() => scrollHandler("contact")}
+              linkText="Contact Us"
+            />
           </div>
 
           {/* Hamburger Button */}

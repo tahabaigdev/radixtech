@@ -26,8 +26,8 @@ const Insights_Sec = () => {
   });
 
   return (
-    <section className="overflow-x-hidden bg-whiteColor">
-      <div className="container py-[2.1rem]">
+    <section id="insights" className="overflow-x-hidden bg-whiteColor">
+      <div className="container py-[6rem]">
         {/* Heading Section */}
         <div className="flex items-start justify-center gap-[8rem] xl:justify-between">
           <motion.div
@@ -39,8 +39,8 @@ const Insights_Sec = () => {
             className="max-w-[100rem] text-center xl:text-left"
           >
             <Common_Heading
-              title="Check out our latest news while you're on the go!"
-              subTitle="Latest Insights"
+              title="Keep up with the latest updates, insights, and industry trends while you're on the go!"
+              subTitle="Insights"
               titleColor="#000000"
               subTitleColor="#4F4F4F"
             />
@@ -64,7 +64,7 @@ const Insights_Sec = () => {
               <motion.a
                 ref={ref}
                 key={item.id}
-                href="#"
+                href={item.link}
                 className="group"
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
@@ -80,20 +80,14 @@ const Insights_Sec = () => {
                     />
                   </div>
 
-                  <div className="flex flex-col gap-[1rem]">
-                    <div className="flex items-center gap-[1rem] text-textPrimary">
-                      <span className="text-[1.2rem] font-semibold uppercase leading-[1.56rem] tracking-[0.4px]">
-                        {item.category}
-                      </span>
-                      <div className="h-[.6rem] w-[.6rem] bg-[#FCB900]"></div>
-                      <span className="text-[1.4rem] font-medium leading-[2.24rem]">
-                        {item.date}
-                      </span>
-                    </div>
-
+                  <div className="flex flex-col gap-[.5rem]">
                     <h4 className="text-[2rem] font-bold capitalize leading-[3rem] text-blackColor">
                       {item.title}
                     </h4>
+
+                    <p className="text-[1.4rem] font-normal">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               </motion.a>

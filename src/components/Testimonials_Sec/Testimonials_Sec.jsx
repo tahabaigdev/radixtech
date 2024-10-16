@@ -27,7 +27,7 @@ const Testimonials_Sec = () => {
 
   return (
     <section className="overflow-x-hidden">
-      <div className="container py-[2.1rem]">
+      <div className="container py-[6rem]">
         <div className="text-center sm:text-left">
           <Common_Heading
             title="Client Voices: What Our Customers Have to Say"

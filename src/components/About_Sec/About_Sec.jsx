@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Common_Heading from "../../styles/Common_Heading/Common_Heading";
 import AboutSecImg from "../../assets/images/about-sec-img.gif";
+import Accordion2 from "../Accordion/Accordion2";
+import { aboutAccodionData } from "../../constants";
 
 const About_Sec = () => {
   const [ref, inView] = useInView({
@@ -20,10 +22,13 @@ const About_Sec = () => {
   };
 
   return (
-    <section ref={ref} className="overflow-x-hidden bg-secondaryColor">
-      <div className="container py-[2.1rem]">
-        <div className="grid grid-cols-1 items-center gap-[4rem] xl:grid-cols-2">
-          {/* Left Column */}
+    <section
+      id="about"
+      ref={ref}
+      className="overflow-x-hidden bg-secondaryColor"
+    >
+      <div className="container py-[6rem]">
+        <div className="grid grid-cols-1 items-start gap-[4rem] xl:grid-cols-2">
           <motion.div
             variants={leftColumnVariants}
             initial="hidden"
@@ -37,8 +42,6 @@ const About_Sec = () => {
               className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center sm:h-[50%] sm:w-[50%] xl:h-[90%] xl:w-[90%]"
             />
           </motion.div>
-
-          {/* Right Column - Image */}
 
           <motion.div
             variants={rightColumnVariants}
@@ -54,13 +57,23 @@ const About_Sec = () => {
               subTitleColor="#ffffff"
             />
 
-            <p className="mx-auto mt-[3rem] max-w-[70rem] text-[1.8rem] font-medium leading-[3.24rem] text-whiteColor xl:mx-0 xl:max-w-full">
-              At RadixTech, we specialize in innovative digital solutions across
-              key sectors such as ICT, ICT4D (Information and Communication
-              Technology for Development), MEAL (Monitoring, Evaluation,
-              Accountability, and Learning), GIS (Geographic Information
-              Systems), and response management systems.
+            <p className="mx-auto my-[3rem] max-w-[70rem] text-[1.8rem] font-medium leading-[3rem] text-whiteColor xl:mx-0 xl:max-w-full">
+              RadixTech partners with nonprofits to address their most critical
+              challenges and tap into growth opportunities. We understand the
+              unique challenges faced by nonprofit organizations. We go beyond
+              ideas to design solutions and implement meaningful action
             </p>
+
+            <div>
+              {aboutAccodionData.map((item, idx) => (
+                <Accordion2
+                  key={idx}
+                  title={item.title}
+                  content={item.description}
+                  list={item.list} // Pass list here
+                />
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

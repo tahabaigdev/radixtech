@@ -16,15 +16,22 @@ const Hero_Sec = () => {
     visible: { opacity: 1, x: 0 },
   };
 
+  const scrollHandler = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="relative overflow-hidden">
+    <section id="hero" className="relative overflow-hidden bg-whiteColor">
       <img
         src={BgGrid}
         alt="Background Grid"
         className="absolute left-[50%] top-0 translate-x-[-50%]"
       />
 
-      <div className="container relative z-[1] py-[2.1rem]">
+      <div className="container relative z-[1] py-[6rem]">
         <div className="grid grid-cols-1 items-center gap-[8rem] xl:grid-cols-2">
           <motion.div
             className="flex flex-col items-center text-center xl:items-start xl:text-left"
@@ -33,22 +40,36 @@ const Hero_Sec = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             variants={leftColumnVariants}
           >
-            <h1 className="text-[4rem] font-bold leading-[5rem] tracking-[-2px] text-blackColor sm:text-[5rem] sm:leading-[6rem]">
-              Empowering with Data-Driven Solutions
+            <h1 className="text-[4rem] font-bold leading-[5rem] tracking-[-2px] text-blackColor sm:text-[4.5rem] sm:leading-[5.5rem]">
+              Simplifying Data for Effective Aid and Humanitarian Action
             </h1>
 
             <p className="mb-[4rem] mt-[2rem] max-w-[60rem] text-[1.6rem] font-medium leading-[3.2rem] text-textPrimary xl:max-w-fit">
-              RadixTech specializes in providing simplified digital platforms
-              and services designed to enable real-time, data-driven
-              decision-making. We serve aid workers and development
-              practitioners, helping them manage both emergency responses and
-              sustainable development projects efficiently.
+              RadixTech delivers platforms and services specifically designed
+              for aid workers and development practitioners.{" "}
+              <span className="bg-tertiaryColor">
+                Our solutions simplify processes, transforming data into
+                actionable insights
+              </span>{" "}
+              that enable real-time decision-making. With extensive experience
+              in humanitarian response and sustainable development projects,{" "}
+              <span className="bg-tertiaryColor">
+                we understand the unique needs, operational challenges, and
+                complex contexts in which nonprofits and aid organizations
+                operate.
+              </span>
             </p>
 
             <div className="flex items-center gap-[1rem]">
-              <Common_Btn link="/contact" linkText="Explore" />
+              <Common_Btn
+                onClick={() => scrollHandler("solutions")}
+                linkText="Explore"
+              />
 
-              <Common_Btn_3 link="/contact" linkText="Get in touch" />
+              <Common_Btn_3
+                onClick={() => scrollHandler("contact")}
+                linkText="Get in touch"
+              />
             </div>
           </motion.div>
 

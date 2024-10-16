@@ -1,12 +1,10 @@
 import { ArrowUpRight } from "lucide-react";
-import { NavLink } from "react-router-dom";
 
-const Common_Btn_2 = ({ link, linkText, textColor, iconColor }) => {
+const Common_Btn_2 = ({ linkText, textColor, iconColor }) => {
   return (
     <>
       <div>
-        <NavLink
-          to={link}
+        <button
           className="inline-flex min-w-[14.5rem] items-center justify-center gap-[1rem] hover:underline"
           style={{ color: textColor }}
         >
@@ -15,7 +13,7 @@ const Common_Btn_2 = ({ link, linkText, textColor, iconColor }) => {
             className="h-[2rem] w-[2rem]"
             style={{ color: iconColor }}
           />
-        </NavLink>
+        </button>
       </div>
     </>
   );

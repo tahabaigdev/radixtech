@@ -20,6 +20,8 @@ export default {
       backgroundImage: {},
       boxShadow: {
         shadow1: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+        shadow2: "0px 4px 15px 0px rgba(27, 49, 57, .13)",
+        shadow3: "0px 15px 15px 0px rgba(27, 49, 57, .13)",
       },
       keyframes: {},
       animation: {},

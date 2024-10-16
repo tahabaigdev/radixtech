@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { PlusIcon, X } from "lucide-react";
 
-const Accordion = ({ title, content }) => {
+const Accordion = ({ title, content, list }) => {
   const [isActive, setIsActive] = useState(false);
   const contentRef = useRef(null);
 
@@ -28,7 +28,7 @@ const Accordion = ({ title, content }) => {
 
       <div
         ref={contentRef}
-        className="overflow-hidden"
+        className="transition-max-height overflow-hidden duration-300 ease-in-out"
         style={{
           maxHeight: isActive ? `${contentRef.current.scrollHeight}px` : "0px",
         }}
@@ -36,6 +36,22 @@ const Accordion = ({ title, content }) => {
         <p className="mt-[2.4rem] text-[1.6rem] leading-[2.4rem] tracking-[-0.0192px] text-blackColor">
           {content}
         </p>
+
+        {list && (
+          <ul className="mt-[1.5rem] flex flex-col gap-[2rem]">
+            {list.map((listItem, idx) => (
+              <li key={idx}>
+                <h5 className="mb-[3px] text-[1.6rem] font-semibold leading-[2.2rem] text-blackColor">
+                  {listItem.title}
+                </h5>
+
+                <p className="text-[1.4rem] leading-[2.2rem] tracking-[-0.0192px] text-blackColor">
+                  {listItem.description}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
