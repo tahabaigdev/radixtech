@@ -28,13 +28,13 @@ const About_Sec = () => {
       className="overflow-x-hidden bg-secondaryColor"
     >
       <div className="container py-[6rem]">
-        <div className="grid grid-cols-1 items-start gap-[4rem] xl:grid-cols-2">
+        <div className="grid grid-cols-1 items-start gap-[4rem] xl:grid-cols-2 xl:gap-[0rem]">
           <motion.div
             variants={leftColumnVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex justify-center"
+            className="flex justify-center xl:justify-start"
           >
             <img
               src={AboutSecImg}

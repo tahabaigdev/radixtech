@@ -15,14 +15,20 @@ const Accordion = ({ title, content, list }) => {
         className="group flex w-[100%] cursor-pointer select-none items-center justify-between"
         onClick={toggleAccordion}
       >
-        <h5 className="text-[1.8rem] font-semibold leading-[2.4rem] text-blackColor group-hover:text-primaryColor">
+        <h5 className="text-[1.8rem] font-semibold leading-[2.4rem] text-primaryColor group-hover:text-blackColor">
           {title}
         </h5>
 
         {isActive ? (
-          <X className="group-hover:text-primaryColor" strokeWidth={1} />
+          <X
+            className="text-primaryColor group-hover:text-blackColor"
+            strokeWidth={1}
+          />
         ) : (
-          <PlusIcon className="group-hover:text-primaryColor" strokeWidth={1} />
+          <PlusIcon
+            className="text-primaryColor group-hover:text-blackColor"
+            strokeWidth={1}
+          />
         )}
       </div>
 

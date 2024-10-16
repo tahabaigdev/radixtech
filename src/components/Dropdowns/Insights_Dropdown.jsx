@@ -12,7 +12,7 @@ const Insights_Dropdown = () => {
   };
 
   return (
-    <div className="static left-[50%] top-[100%] z-[100] grid w-[100%] grid-cols-2 gap-[.8rem] rounded-[1rem] border border-b-[2px] border-solid border-[#e9e2da] border-b-primaryColor bg-whiteColor p-[1.6rem] shadow-shadow1 xl:absolute xl:w-[50rem] xl:translate-x-[-50%]">
+    <div className="static left-[50%] top-[100%] z-[100] grid w-[100%] grid-cols-2 gap-[.8rem] rounded-[1rem] border border-b-[4px] border-solid border-[#e9e2da] border-b-primaryColor bg-whiteColor p-[1.6rem] shadow-shadow1 xl:absolute xl:w-[50rem] xl:translate-x-[-50%]">
       <div>
         <ul>
           {insightsFirstColumnDropdownLinks.map((item) => (

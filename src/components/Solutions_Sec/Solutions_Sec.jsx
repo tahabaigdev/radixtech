@@ -57,7 +57,7 @@ const Solutions_Sec = () => {
                   delay: index * 0.1, // Optional stagger between items
                 }}
                 key={item.id}
-                className="flex flex-col items-center gap-[1rem] border-b border-[transparent] p-[2rem] pb-[4rem] shadow-shadow2 transition-all duration-300 hover:border-primaryColor hover:shadow-shadow3 sm:flex-row"
+                className="flex flex-col items-center gap-[1rem] border-b border-[transparent] border-primaryColor bg-[#FAF8F5] p-[2rem] pb-[4rem] shadow-shadow2 transition-all duration-300 hover:border-[#e9e2da] hover:shadow-shadow3 sm:flex-row"
               >
                 <div>
                   <item.icon className="h-[6rem] w-[6rem] stroke-1 text-primaryColor" />

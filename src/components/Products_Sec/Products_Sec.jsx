@@ -64,9 +64,9 @@ const Products_Sec = () => {
           </div>
         </div>
 
-        <div className="mt-[4rem] grid grid-cols-1 items-center gap-[2rem] xl:grid-cols-2">
+        <div className="mt-[4rem] grid grid-cols-1 items-center gap-[2rem]">
           <div>
-            <ul className="mb-[2rem] flex flex-wrap items-center justify-center gap-[10px] xl:justify-start">
+            <ul className="mb-[2rem] flex flex-wrap items-center justify-center gap-[10px]">
               {[
                 "Management Information System (MIS)",
                 "Monitoring & Evaluation (M&E) / MEAL System",
@@ -102,7 +102,7 @@ const Products_Sec = () => {
                     <img
                       src={slide}
                       alt={`Slide ${idx + 1}`}
-                      className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center sm:h-[50%] sm:w-[50%] xl:h-[90%] xl:w-[90%]"
+                      className="h-[50%] w-[50%] rounded-[1.2rem] object-cover object-center"
                     />
                   </div>
                 </SwiperSlide>
