@@ -109,7 +109,7 @@ const Products_Sec = () => {
               ))}
             </Swiper>
 
-            <div>
+            <div className="order-[-1]">
               {getAccordionData(activeIndex).map((item, idx) => (
                 <Accordion3
                   key={idx}

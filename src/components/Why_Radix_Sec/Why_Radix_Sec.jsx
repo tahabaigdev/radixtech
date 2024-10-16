@@ -61,7 +61,8 @@ const Why_Radix_Sec = () => {
                   key={idx}
                   title={item.title}
                   content={item.description}
-                  list={item.list} // Pass list here
+                  list={item.list}
+                  defaultActive={idx === 0}
                 />
               ))}
             </div>

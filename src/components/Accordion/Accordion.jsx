@@ -1,13 +1,29 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { PlusIcon, X } from "lucide-react";
 
-const Accordion = ({ title, content, list }) => {
-  const [isActive, setIsActive] = useState(false);
+const Accordion = ({ title, content, list, defaultActive = false }) => {
+  const [isActive, setIsActive] = useState(defaultActive);
+  const [maxHeight, setMaxHeight] = useState("0px");
   const contentRef = useRef(null);
 
   const toggleAccordion = () => {
     setIsActive(!isActive);
   };
+
+  // Effect to set the correct maxHeight once the contentRef is available
+  useEffect(() => {
+    if (isActive && contentRef.current) {
+      setMaxHeight(`${contentRef.current.scrollHeight}px`);
+    } else {
+      setMaxHeight("0px");
+    }
+  }, [isActive]);
+
+  useEffect(() => {
+    if (defaultActive && contentRef.current) {
+      setMaxHeight(`${contentRef.current.scrollHeight}px`);
+    }
+  }, [defaultActive]);
 
   return (
     <div className="border-b border-solid border-[#C9C9C9] pb-[3.2rem] pt-[2.8rem]">
@@ -36,7 +52,7 @@ const Accordion = ({ title, content, list }) => {
         ref={contentRef}
         className="transition-max-height overflow-hidden duration-300 ease-in-out"
         style={{
-          maxHeight: isActive ? `${contentRef.current.scrollHeight}px` : "0px",
+          maxHeight: maxHeight,
         }}
       >
         <p className="mt-[2.4rem] text-[1.6rem] leading-[2.4rem] tracking-[-0.0192px] text-blackColor">
