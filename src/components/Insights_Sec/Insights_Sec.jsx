@@ -6,7 +6,6 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 const Insights_Sec = () => {
-  // Animation controls
   const controlsLeft = useAnimation(); // For heading animation
   const controlsRight = useAnimation(); // For content blocks animation
   const { ref: headingRef, inView: headingInView } = useInView({
