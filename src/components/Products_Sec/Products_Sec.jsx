@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "swiper/css";
 import {
   misAccordionData,
@@ -15,15 +17,36 @@ import Meal from "../../assets/images/meal.gif";
 import DataHub from "../../assets/images/data-hub.gif";
 import Brs from "../../assets/images/brs.gif";
 import Cash from "../../assets/images/cash.gif";
+import LazyLoad from "react-lazyload";
 
 const Products_Sec = () => {
   const [activeAccordion, setActiveAccordion] = useState(0); // Default: first accordion open
   const [activeIndex, setActiveIndex] = useState(0); // Default: first tab active
   const swiperRef = useRef(null);
 
+  // Animation controls
+  const controlsLeft = useAnimation(); // For accordion animation
+  const controlsRight = useAnimation(); // For swiper animation
+  const { ref: accordionRef, inView: accordionInView } = useInView({
+    threshold: 0.2, // Accordion triggers when 20% visible
+  });
+  const { ref: swiperRefInView, inView: swiperInView } = useInView({
+    threshold: 0.2, // Swiper triggers when 20% visible
+  });
+
+  // Start the animations when they come into view
+  useEffect(() => {
+    if (accordionInView) {
+      controlsLeft.start({ x: 0, opacity: 1 });
+    }
+    if (swiperInView) {
+      controlsRight.start({ x: 0, opacity: 1 });
+    }
+  }, [accordionInView, swiperInView, controlsLeft, controlsRight]);
+
   const handleButtonClick = (index) => {
     setActiveIndex(index);
-    setActiveAccordion(0); // Reset to the first accordion when tab changes
+    setActiveAccordion(0);
     if (swiperRef.current) {
       swiperRef.current.slideTo(index);
     }
@@ -91,25 +114,14 @@ const Products_Sec = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-[4rem] md:grid-cols-2">
-            <Swiper
-              onSwiper={(swiper) => (swiperRef.current = swiper)}
-              allowTouchMove={false}
-              className="mySwiper"
+            {/* Left Reveal Animation for Accordion */}
+            <motion.div
+              ref={accordionRef} // Track accordion visibility
+              initial={{ x: -100, opacity: 0 }} // Start hidden to the left
+              animate={controlsLeft}
+              transition={{ duration: 0.7 }}
+              className="order-[-1]"
             >
-              {[Mis, Meal, Brs, Cash, DataHub].map((slide, idx) => (
-                <SwiperSlide key={idx}>
-                  <div className="flex justify-center">
-                    <img
-                      src={slide}
-                      alt={`Slide ${idx + 1}`}
-                      className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            <div className="order-[-1]">
               {getAccordionData(activeIndex).map((item, idx) => (
                 <Accordion3
                   key={idx}
@@ -119,7 +131,33 @@ const Products_Sec = () => {
                   onClick={() => handleAccordionClick(idx)}
                 />
               ))}
-            </div>
+            </motion.div>
+
+            {/* Right Reveal Animation for Swiper */}
+            <motion.div
+              ref={swiperRefInView} // Track swiper visibility
+              initial={{ x: 100, opacity: 0 }} // Start hidden to the right
+              animate={controlsRight}
+              transition={{ duration: 0.7 }}
+            >
+              <Swiper
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                allowTouchMove={false}
+                className="mySwiper"
+              >
+                {[Mis, Meal, Brs, Cash, DataHub].map((slide, idx) => (
+                  <SwiperSlide key={idx}>
+                    <LazyLoad className="flex justify-center">
+                      <img
+                        src={slide}
+                        alt={`Products Slide ${idx + 1}`}
+                        className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center"
+                      />
+                    </LazyLoad>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import LazyLoad from "react-lazyload";
 import ClientLogo1 from "../../assets/images/client-logo-1.png";
 import ClientLogo2 from "../../assets/images/client-logo-2.png";
 import ClientLogo3 from "../../assets/images/client-logo-3.png";
@@ -43,12 +44,12 @@ const Client_Sec = () => {
                 ClientLogo3,
                 ClientLogo4,
               ].map((item, idx) => (
-                <div
+                <LazyLoad
                   key={idx}
                   className="scroller-content w-[100%] min-w-[17rem]"
                 >
                   <img src={item} alt="Client logo" />
-                </div>
+                </LazyLoad>
               ))}
             </div>
           </div>

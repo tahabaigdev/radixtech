@@ -1,33 +1,41 @@
-import { ArrowUpRight, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 import CtaImage from "../../assets/images/schedule-img.jpg";
-import { motion } from "framer-motion";
+import LazyLoad from "react-lazyload";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const Schedule_Sec = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Ensures animation runs only once
-    threshold: 0.1, // Percentage of the element visible to trigger the animation
+  // Animation controls
+  const controlsLeft = useAnimation(); // For text section animation
+  const controlsRight = useAnimation(); // For image animation
+  const { ref: textRef, inView: textInView } = useInView({
+    threshold: 0.2, // Trigger when 20% of text is visible
+  });
+  const { ref: imageRef, inView: imageInView } = useInView({
+    threshold: 0.2, // Trigger when 20% of the image is visible
   });
 
-  const leftColumnVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  const rightColumnVariants = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0 },
-  };
+  // Start the animations when they come into view
+  useEffect(() => {
+    if (textInView) {
+      controlsLeft.start({ x: 0, opacity: 1 });
+    }
+    if (imageInView) {
+      controlsRight.start({ x: 0, opacity: 1 });
+    }
+  }, [textInView, imageInView, controlsLeft, controlsRight]);
 
   return (
-    <section id="contact" ref={ref} className="overflow-x-hidden">
+    <section id="contact" className="overflow-x-hidden">
       <div className="container py-[6rem]">
         <div className="grid h-[100%] w-[100%] grid-cols-1 items-center gap-[4rem] overflow-hidden rounded-[1.2rem] bg-primaryColor p-[4rem] xl:grid-cols-2">
+          {/* Left Reveal Animation for Text Section */}
           <motion.div
-            variants={leftColumnVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            ref={textRef}
+            initial={{ x: -100, opacity: 0 }} // Slide in from the left
+            animate={controlsLeft}
+            transition={{ duration: 0.7 }}
           >
             <div>
               <h3 className="text-center text-[4rem] font-medium leading-[5rem] tracking-[-0.64px] text-whiteColor sm:text-[3rem] sm:leading-[4rem] xl:text-left">
@@ -37,8 +45,8 @@ const Schedule_Sec = () => {
               <p className="mb-[2rem] mt-[1rem] text-center text-[1.8rem] font-medium leading-[3.24rem] text-whiteColor xl:text-left">
                 Schedule a conversation with one of our experienced consultants.
                 Tell us about the workflows you’re trying to improve, for a
-                tailored demonstration or to answers to your questions about
-                RadixTech
+                tailored demonstration or answers to your questions about
+                RadixTech.
               </p>
 
               <div className="flex justify-center xl:justify-start">
@@ -75,14 +83,16 @@ const Schedule_Sec = () => {
             </div>
           </motion.div>
 
+          {/* Right Reveal Animation for Image */}
           <motion.div
-            variants={rightColumnVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex justify-center overflow-hidden rounded-[1.2rem]"
+            ref={imageRef}
+            initial={{ x: 100, opacity: 0 }} // Slide in from the right
+            animate={controlsRight}
+            transition={{ duration: 0.7 }}
           >
-            <img src={CtaImage} alt="Cta Image" />
+            <LazyLoad className="flex justify-center overflow-hidden rounded-[1.2rem]">
+              <img src={CtaImage} alt="Cta Image" />
+            </LazyLoad>
           </motion.div>
         </div>
       </div>

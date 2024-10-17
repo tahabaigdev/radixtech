@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import { navLinks } from "../../constants";
 import BrandLogo from "../../assets/images/brand-logo.png";
 import Common_Btn from "../../styles/Common_Btn/Common_Btn";
@@ -15,7 +14,6 @@ const Header = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isDropdownDisabled, setIsDropdownDisabled] = useState(false);
 
-  // Function to check window width and enable/disable dropdowns
   const handleResize = () => {
     if (window.innerWidth <= 1279) {
       setIsDropdownDisabled(true);
@@ -25,13 +23,10 @@ const Header = () => {
   };
 
   useEffect(() => {
-    // Check initial window size
     handleResize();
 
-    // Add event listener for window resizing
     window.addEventListener("resize", handleResize);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -47,7 +42,6 @@ const Header = () => {
     }
   };
 
-  // Toggle hamburger menu
   const toggleHamburger = () => {
     setIsHamburgerOpen(!isHamburgerOpen);
   };
@@ -95,7 +89,6 @@ const Header = () => {
                     />
                   </button>
 
-                  {/* Render dropdowns */}
                   {activeDropdown === "Platforms" &&
                     item.linkText === "Platforms" && (
                       <Platform_Dropdown
@@ -140,7 +133,6 @@ const Header = () => {
             />
           </div>
 
-          {/* Hamburger Button */}
           <div
             className={`hamburger flex h-[3rem] w-[2.5rem] cursor-pointer flex-col items-center justify-center gap-[.5rem] xl:hidden ${
               isHamburgerOpen ? "open" : ""

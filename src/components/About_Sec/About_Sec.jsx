@@ -1,53 +1,60 @@
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import Common_Heading from "../../styles/Common_Heading/Common_Heading";
 import AboutSecImg from "../../assets/images/about-sec-img.gif";
 import Accordion2 from "../Accordion/Accordion2";
 import { aboutAccodionData } from "../../constants";
+import LazyLoad from "react-lazyload";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const About_Sec = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Ensures animation runs only once
-    threshold: 0.1, // Percentage of the element visible to trigger the animation
+  // Animation controls
+  const controlsLeft = useAnimation(); // For image animation
+  const controlsRight = useAnimation(); // For text and accordion animation
+  const { ref: imgRef, inView: imgInView } = useInView({
+    threshold: 0.2, // Trigger when 20% of the image is in view
+  });
+  const { ref: contentRef, inView: contentInView } = useInView({
+    threshold: 0.2, // Trigger when 20% of the content is in view
   });
 
-  const leftColumnVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  const rightColumnVariants = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0 },
-  };
+  // Start the animations when they come into view
+  useEffect(() => {
+    if (imgInView) {
+      controlsLeft.start({ x: 0, opacity: 1 });
+    }
+    if (contentInView) {
+      controlsRight.start({ x: 0, opacity: 1 });
+    }
+  }, [imgInView, contentInView, controlsLeft, controlsRight]);
 
   return (
-    <section
-      id="about"
-      ref={ref}
-      className="overflow-x-hidden bg-secondaryColor"
-    >
+    <section id="about" className="overflow-x-hidden bg-secondaryColor">
       <div className="container py-[6rem]">
         <div className="grid grid-cols-1 items-start gap-[4rem] xl:grid-cols-2 xl:gap-[0rem]">
+          {/* Left Reveal Animation for Image */}
           <motion.div
-            variants={leftColumnVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            ref={imgRef}
+            initial={{ x: -100, opacity: 0 }} // Slide in from left
+            animate={controlsLeft}
+            transition={{ duration: 0.7 }}
             className="flex justify-center xl:justify-start"
           >
-            <img
-              src={AboutSecImg}
-              alt="About Image"
-              className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center sm:h-[50%] sm:w-[50%] xl:h-[90%] xl:w-[90%]"
-            />
+            <LazyLoad>
+              <img
+                src={AboutSecImg}
+                alt="About Image"
+                className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center sm:h-[50%] sm:w-[50%] xl:h-[90%] xl:w-[90%]"
+              />
+            </LazyLoad>
           </motion.div>
 
+          {/* Right Reveal Animation for Text and Accordion */}
           <motion.div
-            variants={rightColumnVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            ref={contentRef}
+            initial={{ x: 100, opacity: 0 }} // Slide in from right
+            animate={controlsRight}
+            transition={{ duration: 0.7 }}
             className="order-[-1] text-center xl:order-2 xl:text-left"
           >
             <Common_Heading
@@ -58,10 +65,12 @@ const About_Sec = () => {
             />
 
             <p className="mx-auto my-[3rem] max-w-[70rem] text-[1.8rem] font-medium leading-[3rem] text-whiteColor xl:mx-0 xl:max-w-full">
-              RadixTech partners with nonprofits to address their most critical
-              challenges and tap into growth opportunities. We understand the
-              unique challenges faced by nonprofit organizations. We go beyond
-              ideas to design solutions and implement meaningful action
+              RadixTech partners with nonprofits to support decision making in
+              addressing their most critical challenges and unlocking growth
+              opportunities. We understand the unique decision-making processes
+              and challenges faced by nonprofit organizations. Beyond just
+              generating ideas, we focus on designing strategic solutions and
+              implementing decisive actions that drive meaningful impact.
             </p>
 
             <div>

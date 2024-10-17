@@ -5,7 +5,6 @@ import HeroImg from "../../assets/images/hero-img.gif";
 import { motion } from "framer-motion";
 
 const Hero_Sec = () => {
-  // Animation variants for the columns
   const leftColumnVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0 },
@@ -40,21 +39,25 @@ const Hero_Sec = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             variants={leftColumnVariants}
           >
-            <h1 className="text-[4rem] font-bold leading-[5rem] tracking-[-2px] text-blackColor sm:text-[4.5rem] sm:leading-[5.5rem]">
-              Simplifying Data for Effective Aid and Humanitarian Action
+            <h1 className="text-[3rem] font-bold leading-[4rem] tracking-[-2px] text-blackColor sm:text-[4rem] sm:leading-[5rem]">
+              Built by and for Humanitarian Aid Workers and Development
+              Practitioners!
             </h1>
 
             <p className="mb-[4rem] mt-[2rem] max-w-[60rem] text-[1.6rem] font-medium leading-[3.2rem] text-textPrimary xl:max-w-fit">
-              RadixTech delivers platforms and services specifically designed
-              for aid workers and development practitioners. Our solutions
-              simplify processes, transforming data into actionable insights
-              that enable real-time decision-making. With extensive experience
-              in humanitarian response and sustainable development projects,{" "}
+              RadixTech combines effective aid, humanitarian action, and
+              technology expertise to deliver platforms and services
+              specifically designed for impactful humanitarian work and global
+              movement. Our platforms and services streamline processes,
+              transforming data into actionable insights that enable data-driven
+              decision-making.{" "}
               <span className="bg-[#FEF7BD]">
-                we understand the unique needs, operational challenges, and
-                complex contexts in which nonprofits and aid organizations
-                operate.
-              </span>
+                With extensive experience in humanitarian response and
+                sustainable development projects,
+              </span>{" "}
+              we understand the unique needs, operational challenges, and
+              complex environments in which nonprofits and aid
+              organizations operate.
             </p>
 
             <div className="flex items-center gap-[1rem]">

@@ -3,9 +3,7 @@ import BrandRedIcon from "../../assets/images/brand-red-icon.png";
 import {
   aboutFirstColumnDropdownLinks,
   insightsFirstColumnDropdownLinks,
-  mainLinks,
   platformFirstColumnDropdownLinks,
-  platformSecondColumnDropdownLinks,
   socialLinksData,
   solutionsFirstColumnDropdownLinks,
   whyFirstColumnDropdownLinks,

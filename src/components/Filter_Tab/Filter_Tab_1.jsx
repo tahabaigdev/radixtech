@@ -1,7 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "swiper/css";
 import { slideContentData } from "../../constants";
+import LazyLoad from "react-lazyload";
 
 // Data for tabs and slides
 const TAB_DATA = [
@@ -18,6 +21,26 @@ const Filter_Tab_1 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
 
+  // Animation controls
+  const controlsLeft = useAnimation();
+  const controlsRight = useAnimation();
+  const { ref: tabsRef, inView: tabsInView } = useInView({
+    threshold: 0.2, // Trigger animation when 20% visible
+  });
+  const { ref: swiperRefInView, inView: swiperInView } = useInView({
+    threshold: 0.2,
+  });
+
+  // Start the animations when they come into view
+  useEffect(() => {
+    if (tabsInView) {
+      controlsLeft.start({ x: 0, opacity: 1 });
+    }
+    if (swiperInView) {
+      controlsRight.start({ x: 0, opacity: 1 });
+    }
+  }, [tabsInView, swiperInView, controlsLeft, controlsRight]);
+
   const handleButtonClick = (index) => {
     setActiveIndex(index);
     if (swiperRef.current) {
@@ -27,8 +50,14 @@ const Filter_Tab_1 = () => {
 
   return (
     <div>
-      {/* Tabs Section */}
-      <ul className="flex flex-wrap items-center justify-center gap-[1.6rem]">
+      {/* Tabs Section with Left Reveal Animation */}
+      <motion.ul
+        ref={tabsRef}
+        initial={{ x: -100, opacity: 0 }}
+        animate={controlsLeft}
+        transition={{ duration: 0.7 }}
+        className="flex flex-wrap items-center justify-center gap-[1.6rem]"
+      >
         {TAB_DATA.map((item, idx) => (
           <li key={idx}>
             <button
@@ -43,10 +72,16 @@ const Filter_Tab_1 = () => {
             </button>
           </li>
         ))}
-      </ul>
+      </motion.ul>
 
-      {/* Swiper Section */}
-      <div className="mt-[6rem]">
+      {/* Swiper Section with Right Reveal Animation */}
+      <motion.div
+        ref={swiperRefInView}
+        initial={{ x: 100, opacity: 0 }}
+        animate={controlsRight}
+        transition={{ duration: 0.7 }}
+        className="mt-[6rem]"
+      >
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           allowTouchMove={false} // Disable touch sliding
@@ -56,13 +91,13 @@ const Filter_Tab_1 = () => {
             <SwiperSlide key={idx}>
               <div className="grid grid-cols-1 items-center gap-[2rem] xl:grid-cols-2 xl:gap-[0rem]">
                 {/* Image Section */}
-                <div className="flex justify-center overflow-hidden xl:aspect-[1.7/1] xl:justify-start">
+                <LazyLoad className="flex justify-center overflow-hidden xl:aspect-[1.7/1] xl:justify-start">
                   <img
                     className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center sm:h-[50%] sm:w-[50%] xl:h-[90%] xl:w-[90%]"
                     src={slide.imgSrc}
-                    alt={`Slide ${idx + 1}`}
+                    alt={`Services Slide ${idx + 1}`}
                   />
-                </div>
+                </LazyLoad>
 
                 {/* Content Section */}
                 <div className="flex flex-col items-center gap-[1.5rem] text-center xl:items-start xl:text-left">
@@ -78,7 +113,7 @@ const Filter_Tab_1 = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,61 +1,25 @@
 import { solutionsData } from "../../constants";
 import Common_Heading from "../../styles/Common_Heading/Common_Heading";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const Solutions_Sec = () => {
-  // Animation variant for fade in
-  const fadeInVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  // Set up `useInView` for Common_Heading
-  const [headingRef, headingInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   return (
     <section id="solutions" className="overflow-x-hidden bg-tertiaryColor">
       <div className="container py-[6rem]">
         <div className="flex items-start justify-center gap-[8rem] text-center xl:justify-between xl:text-left">
-          <motion.div
-            ref={headingRef}
-            initial="hidden"
-            animate={headingInView ? "visible" : "hidden"}
-            variants={fadeInVariants}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="max-w-[100rem]"
-          >
+          <div className="max-w-[100rem]">
             <Common_Heading
               title="Optimized for productivity, cost savings, and growth potential."
               subTitle="Solutions"
               titleColor="#000000"
               subTitleColor="#4F4F4F"
             />
-          </motion.div>
+          </div>
         </div>
 
         <div className="mt-[8rem] grid gap-[3.2rem] lg:grid-cols-2">
           {solutionsData.map((item, index) => {
-            // Set up `useInView` for each grid item
-            const [ref, inView] = useInView({
-              triggerOnce: true, // Triggers animation only once
-              threshold: 0.1, // 10% of the element needs to be visible to trigger
-            });
-
             return (
-              <motion.div
-                ref={ref} // Pass the ref to the motion element
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"} // Animate when in view
-                variants={fadeInVariants}
-                transition={{
-                  duration: 0.5,
-                  ease: "easeOut",
-                  delay: index * 0.1, // Optional stagger between items
-                }}
+              <div
                 key={item.id}
                 className="flex flex-col items-center gap-[1rem] border-b border-[transparent] border-primaryColor bg-[#FAF8F5] p-[2rem] pb-[4rem] shadow-shadow2 transition-all duration-300 hover:border-[#e9e2da] hover:shadow-shadow3 sm:flex-row"
               >
@@ -72,7 +36,7 @@ const Solutions_Sec = () => {
                     {item.subTitle}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

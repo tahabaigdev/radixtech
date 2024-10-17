@@ -29,23 +29,55 @@ const App = () => {
   }, []);
 
   const schemaMarkup = {
-    "@context": "https://schema.org",
+    "@context": "http://schema.org",
     "@type": "FAQPage",
     mainEntity: [
       {
         "@type": "Question",
-        name: "What is Radixtech used for??",
+        name: "What is RadixTech used for?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "<p>Radixtech is an industry-leading, cloud-based data engineering tool used for processing and transforming massive quantities of data and exploring the data through machine learning models. Recently added to Azure, it's the latest big data tool for the Microsoft cloud..</p>",
+          text: "RadixTech is an industry-leading, cloud-based data engineering tool used for processing and transforming massive quantities of data and exploring the data through machine learning models. Recently added to Azure, it's the latest big data tool for the Microsoft cloud. Learn more on our <a href='https://radixtech.org/'>official website</a>.",
         },
       },
       {
         "@type": "Question",
-        name: "Is Radixtech an ETL tool?",
+        name: "Is RadixTech an ETL tool?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "In the ever-evolving landscape of data processing and analysis, organizations are continually seeking robust solutions to streamline their Extract, Transform, Load (ETL) processes. Radixtech, a cloud-based platform built on Apache Spark, has emerged as a popular choice for ETL workflows.06-Mar-2024.",
+          text: "RadixTech is a cloud-based platform built on Apache Spark, ideal for Extract, Transform, Load (ETL) processes. It simplifies ETL workflows for data processing. Discover more details on our <a href='https://radixtech.org/services'>services page</a>.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What kind of tool is RadixTech?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "RadixTech is a cloud platform simplifying complex data management, integrated with Azure, AWS, and Google Cloud. It's perfect for big data management. Learn more <a href='https://azure.microsoft.com/en-us/products/data-factory'>here</a>.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does RadixTech require coding?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "RadixTech allows you to analyze vast data sets, discover insights, and make predictions with just a few clicks, without writing code. For more information, visit our <a href='https://radixtech.org/solutions'>solutions page</a>.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is RadixTech a database?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "RadixTech integrates with databases but is not a database itself. It offers a virtual data warehouse interface for managing large datasets stored as files. Learn more on our <a href='https://www.reddit.com/'>Reddit page</a>.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is RadixTech and why is it used?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We have a deep understanding of the humanitarian and development sectors. Our products are designed to connect a range of users from communities, governments, private sectors, and local organizations to make coherent efforts using the latest digital services, shared platforms, and cloud computing tools & technologies. Learn more about our mission on our <a href='https://radixtech.org/about'>About Us page</a>.",
         },
       },
     ],
@@ -78,21 +110,63 @@ const App = () => {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Facebook",
-        item: "https://www.facebook.com/",
+        name: "Hero",
+        item: "https://www.radixtech.org/#hero",
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: "LinkedIn",
-        item: "https://www.linkedin.com/company/103920896/admin/dashboard/",
+        name: "Products",
+        item: "https://www.radixtech.org/#platform",
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: "Instagram",
-        item: "https://www.instagram.com/radixtechinsight/",
+        name: "Solutions",
+        item: "https://www.radixtech.org/#solutions",
       },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "Services",
+        item: "https://www.radixtech.org/#services",
+      },
+      {
+        "@type": "ListItem",
+        position: 5,
+        name: "About",
+        item: "https://www.radixtech.org/#about",
+      },
+      {
+        "@type": "ListItem",
+        position: 6,
+        name: "Why",
+        item: "https://www.radixtech.org/#why",
+      },
+      {
+        "@type": "ListItem",
+        position: 7,
+        name: "Insights",
+        item: "https://www.radixtech.org/#insights",
+      },
+      {
+        "@type": "ListItem",
+        position: 8,
+        name: "Contact",
+        item: "https://www.radixtech.org/#contact",
+      },
+    ],
+  };
+
+  const socialProfileSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "RadixTech",
+    url: "https://radixtech.org",
+    sameAs: [
+      "https://www.facebook.com/radixtechinsight",
+      "https://www.linkedin.com/company/103920896",
+      "https://www.instagram.com/radixtechinsight",
     ],
   };
 
@@ -109,6 +183,10 @@ const App = () => {
 
         <script type="application/ld+json">
           {JSON.stringify(breadcurmbSchema)}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify(socialProfileSchema)}
         </script>
       </Helmet>
       <Header />

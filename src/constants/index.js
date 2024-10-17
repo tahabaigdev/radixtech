@@ -1,9 +1,3 @@
-import PortfolioImg1 from "../assets/images/portfolio-img-1.gif";
-import PortfolioImg2 from "../assets/images/portfolio-img-2.gif";
-import PortfolioImg3 from "../assets/images/portfolio-img-3.gif";
-import PortfolioImg4 from "../assets/images/portfolio-img-4.gif";
-import InsightsImg1 from "../assets/images/insights-img-1.gif";
-import InsightsImg2 from "../assets/images/insights-img-2.gif";
 import TestimonialsAvatar1 from "../assets/images/testimonials-avatar-1.avif";
 import TestimonialsAvatar2 from "../assets/images/testimonials-avatar-2.avif";
 import TestimonialsAvatar3 from "../assets/images/testimonials-avatar-3.avif";
@@ -18,20 +12,13 @@ import GisImg from "../assets/images/gis.gif";
 import AmlImg from "../assets/images/aml.gif";
 import DmaImg from "../assets/images/dma.gif";
 import { BrainCircuit, Cpu, Ratio, ScanBarcode } from "lucide-react";
-import { FaFacebookF, FaLinkedinIn, FaUsers, FaYoutube } from "react-icons/fa";
-import { IoIosCodeWorking, IoLogoInstagram } from "react-icons/io";
-import { RiDashboard2Line, RiUserSmileLine } from "react-icons/ri";
-import {
-  TbCashRegister,
-  TbClipboardData,
-  TbDatabaseSearch,
-  TbMapSearch,
-  TbPlugConnectedX,
-  TbReportSearch,
-} from "react-icons/tb";
-import { IoPeopleCircleOutline } from "react-icons/io5";
+import { FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { IoLogoInstagram } from "react-icons/io";
+import { RiUserSmileLine } from "react-icons/ri";
+import { TbClipboardData, TbPlugConnectedX } from "react-icons/tb";
 import { AiOutlineDatabase } from "react-icons/ai";
 import {
+  MdAutoAwesome,
   MdOutlineAssessment,
   MdOutlineContactPhone,
   MdOutlineInsights,
@@ -42,27 +29,35 @@ import { LiaChalkboardTeacherSolid, LiaPodcastSolid } from "react-icons/lia";
 import {
   PiBriefcase,
   PiCopySimple,
-  PiExport,
+  PiDesktopTower,
   PiMapTrifold,
   PiWashingMachineBold,
 } from "react-icons/pi";
-import { BiAccessibility, BiUserPin } from "react-icons/bi";
-import { HiOutlineDesktopComputer } from "react-icons/hi";
-import { FiPieChart } from "react-icons/fi";
-import {
-  GrSecure,
-  GrServerCluster,
-  GrShieldSecurity,
-  GrTechnology,
-  GrUserWorker,
-} from "react-icons/gr";
+
+import { GrSecure } from "react-icons/gr";
 import { LuBoxes, LuBrainCircuit, LuContact } from "react-icons/lu";
-import { FaTruckFieldUn, FaUsersViewfinder } from "react-icons/fa6";
+import {
+  FaHelmetUn,
+  FaRegFontAwesome,
+  FaUsersViewfinder,
+} from "react-icons/fa6";
 import { GoWorkflow } from "react-icons/go";
-import { GiMeshNetwork } from "react-icons/gi";
 import { CiCalendar } from "react-icons/ci";
-import InsightsImage from "../assets/images/insights.gif";
-import PodcastImage from "../assets/images/podcast.gif";
+import MisIcon from "../assets/images/icons/mis.svg";
+import MealIcon from "../assets/images/icons/meal.svg";
+import BeneficiaryIcon from "../assets/images/icons/beneficiary.svg";
+import CashIcon from "../assets/images/icons/cash.svg";
+import DatahubIcon from "../assets/images/icons/datahub.svg";
+import AccessibilityIcon from "../assets/images/icons/accessibility.svg";
+import UserFriendlyIcon from "../assets/images/icons/user-friendly.svg";
+import ReportsDashIcon from "../assets/images/icons/reports-and-dash.svg";
+import DataGisIcon from "../assets/images/icons/data-gis.svg";
+import ExportOptionsIcon from "../assets/images/icons/export-options.svg";
+import CustomizableTeamsIcon from "../assets/images/icons/customizable-teams.svg";
+import SingleSignIcon from "../assets/images/icons/single-sign-on.svg";
+import MultipleServerIcon from "../assets/images/icons/multiple-server.svg";
+import ComplianceSecurityIcon from "../assets/images/icons/compliance-and-security.svg";
+import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 
 export const navLinks = [
   {
@@ -96,36 +91,6 @@ export const navLinks = [
   },
 ];
 
-export const dataHubData = [
-  {
-    id: 0,
-    imgUrl: PortfolioImg1,
-    title: "Contextual understanding",
-    subTitle: "digital services",
-  },
-
-  {
-    id: 1,
-    imgUrl: PortfolioImg2,
-    title: "Work closely with field teams",
-    subTitle: "technical advisors",
-  },
-
-  {
-    id: 2,
-    imgUrl: PortfolioImg3,
-    title: "Our team",
-    subTitle: "Manager Information System",
-  },
-
-  {
-    id: 3,
-    imgUrl: PortfolioImg4,
-    title: "Collaborative Expertise",
-    subTitle: "customized digital platforms",
-  },
-];
-
 export const solutionsData = [
   {
     id: 0,
@@ -138,7 +103,7 @@ export const solutionsData = [
   {
     id: 1,
     icon: ScanBarcode,
-    title: "Secure",
+    title: "GDPR Ready",
     subTitle:
       "With GDPR-compliant security protocols, RadixTech ensures strong governance, protecting your data and privacy.",
   },
@@ -157,25 +122,6 @@ export const solutionsData = [
     title: "Seamless Integrations",
     subTitle:
       "RadixTech integrates with critical systems, such as MEAL, HR, Finance, and Supply Chain tools, to streamline workflows.",
-  },
-];
-
-export const insightsData = [
-  {
-    id: 0,
-    link: "https://www.linkedin.com/posts/weareradix_datadrivendialogues-digitalinnovation-datadrivendecisionmaking-activity-7250648143707459584-NZPT?utm_source=share&utm_medium=member_desktop",
-    imgUrl: PodcastImage,
-    title: "Podcast",
-    description: `"Data-Driven Dialogues" podcast offer guidance on navigating the complexities of data, technology, and digital transformation. Provides valuable advice, inspiring case studies, and practical coaching sessions.`,
-  },
-
-  {
-    id: 1,
-    link: "https://www.linkedin.com/posts/weareradix_podcast-datadriven-podcast-activity-7249747893610287104-_DiW?utm_source=share&utm_medium=member_desktop",
-    imgUrl: InsightsImage,
-    title: "Insights",
-    description:
-      "We cover pertinent questions, provides practical advice and strategies to navigate data, technology, and digital transformation, helping professionals unlock innovative solutions.",
   },
 ];
 
@@ -238,35 +184,35 @@ export const testimonialsData = [
 export const platformFirstColumnDropdownLinks = [
   {
     id: 0,
-    icon: RiDashboard2Line,
+    icon: MisIcon,
     text: "Management Information System (MIS)",
     link: "",
   },
 
   {
     id: 1,
-    icon: TbReportSearch,
+    icon: MealIcon,
     text: "MEAL System",
     link: "",
   },
 
   {
     id: 2,
-    icon: IoPeopleCircleOutline,
+    icon: BeneficiaryIcon,
     text: "Beneficiary Registration System",
     link: "",
   },
 
   {
     id: 3,
-    icon: TbCashRegister,
+    icon: CashIcon,
     text: "Cash and Humanitarian Aid Distribution System",
     link: "",
   },
 
   {
     id: 4,
-    icon: TbDatabaseSearch,
+    icon: DatahubIcon,
     text: "DataHub",
     link: "",
   },
@@ -275,42 +221,42 @@ export const platformFirstColumnDropdownLinks = [
 export const platformSecondColumnDropdownLinks = [
   {
     id: 0,
-    icon: BiAccessibility,
+    icon: AccessibilityIcon,
     text: "Accessibility",
     link: "",
   },
 
   {
     id: 1,
-    icon: HiOutlineDesktopComputer,
+    icon: UserFriendlyIcon,
     text: "User-Friendly Interface",
     link: "",
   },
 
   {
     id: 2,
-    icon: FiPieChart,
+    icon: ReportsDashIcon,
     text: "Reports and Dashboards",
     link: "",
   },
 
   {
     id: 3,
-    icon: TbMapSearch,
+    icon: DataGisIcon,
     text: "Data on GIS Maps",
     link: "",
   },
 
   {
     id: 4,
-    icon: PiExport,
+    icon: ExportOptionsIcon,
     text: "Export Options",
     link: "",
   },
 
   {
     id: 5,
-    icon: FaUsers,
+    icon: CustomizableTeamsIcon,
     text: "Customizable Teams and User Roles",
     link: "",
   },
@@ -319,21 +265,21 @@ export const platformSecondColumnDropdownLinks = [
 export const platformThirdColumnDropdownLinks = [
   {
     id: 0,
-    icon: BiUserPin,
+    icon: SingleSignIcon,
     text: "Single Sign-On (SSO)",
     link: "",
   },
 
   {
     id: 1,
-    icon: GrServerCluster,
+    icon: MultipleServerIcon,
     text: "Multiple Server Locations",
     link: "",
   },
 
   {
     id: 2,
-    icon: GrShieldSecurity,
+    icon: ComplianceSecurityIcon,
     text: "Compliance & Security",
     link: "",
   },
@@ -455,7 +401,7 @@ export const insightsSecondColumnDropdownLinks = [
 export const whyFirstColumnDropdownLinks = [
   {
     id: 0,
-    icon: FaTruckFieldUn,
+    icon: FaHelmetUn,
     text: "Contextual understanding",
     link: "",
   },
@@ -494,21 +440,21 @@ export const aboutFirstColumnDropdownLinks = [
 
   {
     id: 1,
-    icon: GrUserWorker,
+    icon: HiOutlineBuildingOffice2,
     text: "Who we are",
     link: "",
   },
 
   {
     id: 2,
-    icon: GiMeshNetwork,
+    icon: MdAutoAwesome,
     text: "What we think",
     link: "",
   },
 
   {
     id: 3,
-    icon: IoIosCodeWorking,
+    icon: FaRegFontAwesome,
     text: "Mission",
     link: "",
   },
@@ -524,7 +470,7 @@ export const aboutSecondColumnDropdownLinks = [
 
   {
     id: 1,
-    icon: GrTechnology,
+    icon: PiDesktopTower,
     text: "Technology Expertise",
     link: "",
   },
@@ -677,7 +623,7 @@ export const whyRadixAccodionData = [
   {
     title: "Contextual understanding",
     description:
-      "We have a deep understanding of ways of working of humanitarian and development sector. We are well aware that our products should be designed in a way that those connect a range of users from communities, government, private sector and local organizations so that they can make coherent efforts using the latest digital services, shared platforms and cloud computing tools & technologies.",
+      "We have a deep understanding of the humanitarian and development sectors' ways of working. Our products are designed to connect a diverse range of users—from communities and government to the private sector and local organizations—enabling them to align their efforts through a unified decision-making wheel. By leveraging the latest digital services, shared platforms, and cloud computing technologies, we ensure coherent, data-driven decisions across all sectors.",
   },
 
   {
@@ -745,7 +691,7 @@ export const techExpertiseAccodionData = [
   {
     title: "Data Analytics & Visualization",
     description:
-      "Advanced analytics using platforms like Tableau, Power BI, and Google Data Studio to transform complex data into clear, actionable insights.",
+      "Advanced analytics, including training through our data analytics bootcamp, leverages platforms like Tableau, Power BI, and Google Data Studio to transform complex data into clear, actionable insights.",
   },
 
   {

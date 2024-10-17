@@ -19,7 +19,11 @@ const Platform_Dropdown = ({ handleScroll }) => {
                 onClick={handleScroll}
                 className="flex w-full items-center gap-[1rem] rounded-[.8rem] px-[1.6rem] py-[1.2rem] text-left text-[1.4rem] font-medium leading-[2.24rem] hover:bg-[#FAF8F5]"
               >
-                <item.icon className="h-[2rem] min-w-[2rem]" />
+                <img
+                  src={item.icon}
+                  className="h-[2rem] min-w-[2rem]"
+                  alt="Icon"
+                />
 
                 <span>{item.text}</span>
               </button>
@@ -40,7 +44,11 @@ const Platform_Dropdown = ({ handleScroll }) => {
                 onClick={handleScroll}
                 className="flex w-full items-center gap-[1rem] rounded-[.8rem] px-[1.6rem] py-[1.2rem] text-left text-[1.4rem] font-medium leading-[2.24rem] hover:bg-[#FAF8F5]"
               >
-                <item.icon className="h-[2rem] min-w-[2rem]" />
+                <img
+                  src={item.icon}
+                  className="h-[2rem] min-w-[2rem]"
+                  alt="Icon"
+                />
 
                 <span>{item.text}</span>
               </button>
@@ -61,7 +69,11 @@ const Platform_Dropdown = ({ handleScroll }) => {
                 onClick={handleScroll}
                 className="flex w-full items-center gap-[1rem] rounded-[.8rem] px-[1.6rem] py-[1.2rem] text-left text-[1.4rem] font-medium leading-[2.24rem] hover:bg-[#FAF8F5]"
               >
-                <item.icon className="h-[2rem] min-w-[2rem]" />
+                <img
+                  src={item.icon}
+                  className="h-[2rem] min-w-[2rem]"
+                  alt="Icon"
+                />
 
                 <span>{item.text}</span>
               </button>
