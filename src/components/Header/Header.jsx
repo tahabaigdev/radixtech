@@ -58,7 +58,7 @@ const Header = () => {
       <div className="container flex items-center justify-between py-[2rem]">
         <div className="inline-flex flex-1 items-center">
           <button onClick={() => scrollHandler("hero")}>
-            {/* <img src={BrandLogo} alt="Brand Logo" className="max-w-[16rem]" /> */}
+            <img src={BrandLogo} alt="Brand Logo" className="max-w-[16rem]" />
           </button>
         </div>
 
