@@ -6,7 +6,7 @@ import ClientLogo4 from "../../assets/images/client-logo-4.png";
 
 const Client_Sec = () => {
   return (
-    <section className="overflow-hidden bg-secondaryColor py-[6rem]">
+    <section className="overflow-hidden bg-secondaryColor py-[3rem]">
       <div className="container flex flex-col items-center gap-[4rem] xl:flex-row">
         <div className="w-[19.3rem]">
           <h4 className="text-center text-[2rem] font-bold leading-[3rem] text-whiteColor xl:text-left">

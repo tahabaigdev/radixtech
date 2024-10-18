@@ -4,6 +4,8 @@ import LazyLoad from "react-lazyload";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import { RiContactsLine } from "react-icons/ri";
+import { LuContact2 } from "react-icons/lu";
 
 const Schedule_Sec = () => {
   // Animation controls
@@ -55,7 +57,7 @@ const Schedule_Sec = () => {
                   className="inline-flex h-[4.8rem] min-w-[14.8475rem] items-center justify-center gap-[1rem] bg-blackColor px-[2rem] py-[1.2rem] text-[1.6rem] leading-[2.4rem] text-whiteColor transition-all duration-[0.3s] hover:bg-tertiaryColor hover:text-blackColor"
                 >
                   Talk to an Expert
-                  <Calendar />
+                  <LuContact2 className="h-[2rem] min-w-[2rem]" />
                 </a>
               </div>
             </div>
@@ -77,7 +79,7 @@ const Schedule_Sec = () => {
                   className="inline-flex h-[4.8rem] min-w-[14.8475rem] items-center justify-center gap-[1rem] bg-whiteColor px-[2rem] py-[1.2rem] text-[1.6rem] leading-[2.4rem] text-blackColor transition-all duration-[0.3s] hover:bg-blackColor hover:text-whiteColor"
                 >
                   Get in Touch
-                  <Calendar />
+                  <RiContactsLine />
                 </a>
               </div>
             </div>
