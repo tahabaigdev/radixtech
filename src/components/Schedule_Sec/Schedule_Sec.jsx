@@ -54,7 +54,7 @@ const Schedule_Sec = () => {
                   href="mailto:info@RadixTech.org"
                   className="inline-flex h-[4.8rem] min-w-[14.8475rem] items-center justify-center gap-[1rem] bg-blackColor px-[2rem] py-[1.2rem] text-[1.6rem] leading-[2.4rem] text-whiteColor transition-all duration-[0.3s] hover:bg-tertiaryColor hover:text-blackColor"
                 >
-                  Get in Touch
+                  Talk to an Expert
                   <Calendar />
                 </a>
               </div>
@@ -76,7 +76,7 @@ const Schedule_Sec = () => {
                   href="mailto:info@RadixTech.org"
                   className="inline-flex h-[4.8rem] min-w-[14.8475rem] items-center justify-center gap-[1rem] bg-whiteColor px-[2rem] py-[1.2rem] text-[1.6rem] leading-[2.4rem] text-blackColor transition-all duration-[0.3s] hover:bg-blackColor hover:text-whiteColor"
                 >
-                  Talk to an expert
+                  Get in Touch
                   <Calendar />
                 </a>
               </div>

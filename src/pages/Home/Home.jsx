@@ -14,13 +14,13 @@ const Home = () => {
     <>
       <Hero_Sec />
 
+      <Client_Sec />
+
       <Products_Sec />
 
       <Solutions_Sec />
 
       <Services_Sec />
-
-      <Client_Sec />
 
       <Testimonials_Sec />
 

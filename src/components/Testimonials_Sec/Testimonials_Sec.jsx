@@ -26,7 +26,7 @@ const Testimonials_Sec = () => {
   }, []);
 
   return (
-    <section className="overflow-x-hidden">
+    <section className="overflow-x-hidden bg-tertiaryColor">
       <div className="container py-[6rem]">
         <div className="text-center sm:text-left">
           <Common_Heading
