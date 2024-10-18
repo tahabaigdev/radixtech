@@ -3,6 +3,7 @@ import Common_Btn from "../../styles/Common_Btn/Common_Btn";
 import Common_Btn_3 from "../../styles/Common_Btn/Common_Btn_3";
 import HeroImg from "../../assets/images/hero-img.gif";
 import { motion } from "framer-motion";
+import { RiContactsLine } from "react-icons/ri";
 
 const Hero_Sec = () => {
   const leftColumnVariants = {
@@ -66,10 +67,16 @@ const Hero_Sec = () => {
                 linkText="Explore"
               />
 
-              <Common_Btn_3
-                onClick={() => scrollHandler("contact")}
-                linkText="Get in touch"
-              />
+              <a
+                href="mailto:info@RadixTech.org"
+                className="group inline-flex h-[4rem] min-w-[13rem] items-center justify-center gap-[1rem] rounded-[.5rem] border border-[transparent] bg-secondaryColor px-[2rem] py-[1.2rem] transition-all duration-[0.3s] hover:border-[#e9e2da] hover:bg-tertiaryColor"
+              >
+                <span className="text-[1.6rem] font-medium text-whiteColor transition-all duration-300 group-hover:text-blackColor">
+                  Get in Touch
+                </span>
+
+                <RiContactsLine className="h-[2rem] w-[2rem] text-whiteColor transition-all duration-300 group-hover:text-blackColor" />
+              </a>
             </div>
           </motion.div>
 
