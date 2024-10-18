@@ -17,7 +17,6 @@ import Meal from "../../assets/images/meal.gif";
 import DataHub from "../../assets/images/data-hub.gif";
 import Brs from "../../assets/images/brs.gif";
 import Cash from "../../assets/images/cash.gif";
-import LazyLoad from "react-lazyload";
 
 const Products_Sec = () => {
   const [activeAccordion, setActiveAccordion] = useState(0); // Default: first accordion open
@@ -147,13 +146,13 @@ const Products_Sec = () => {
               >
                 {[Mis, Meal, Brs, Cash, DataHub].map((slide, idx) => (
                   <SwiperSlide key={idx}>
-                    <LazyLoad className="flex justify-center">
+                    <div className="flex justify-center">
                       <img
                         src={slide}
                         alt={`Products Slide ${idx + 1}`}
                         className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center"
                       />
-                    </LazyLoad>
+                    </div>
                   </SwiperSlide>
                 ))}
               </Swiper>

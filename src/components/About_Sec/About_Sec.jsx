@@ -2,7 +2,6 @@ import Common_Heading from "../../styles/Common_Heading/Common_Heading";
 import AboutSecImg from "../../assets/images/about-sec-img.gif";
 import Accordion2 from "../Accordion/Accordion2";
 import { aboutAccodionData } from "../../constants";
-import LazyLoad from "react-lazyload";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
@@ -40,13 +39,13 @@ const About_Sec = () => {
             transition={{ duration: 0.7 }}
             className="flex justify-center xl:justify-start"
           >
-            <LazyLoad>
+            <div>
               <img
                 src={AboutSecImg}
                 alt="About Image"
                 className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center sm:h-[50%] sm:w-[50%] xl:h-[90%] xl:w-[90%]"
               />
-            </LazyLoad>
+            </div>
           </motion.div>
 
           {/* Right Reveal Animation for Text and Accordion */}

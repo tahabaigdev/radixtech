@@ -4,7 +4,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "swiper/css";
 import { slideContentData } from "../../constants";
-import LazyLoad from "react-lazyload";
 
 // Data for tabs and slides
 const TAB_DATA = [
@@ -91,13 +90,13 @@ const Filter_Tab_1 = () => {
             <SwiperSlide key={idx}>
               <div className="grid grid-cols-1 items-center gap-[2rem] xl:grid-cols-2 xl:gap-[0rem]">
                 {/* Image Section */}
-                <LazyLoad className="flex justify-center overflow-hidden xl:aspect-[1.7/1] xl:justify-start">
+                <div className="flex justify-center overflow-hidden xl:aspect-[1.7/1] xl:justify-start">
                   <img
                     className="h-[100%] w-[100%] rounded-[1.2rem] object-cover object-center sm:h-[50%] sm:w-[50%] xl:h-[90%] xl:w-[90%]"
                     src={slide.imgSrc}
                     alt={`Services Slide ${idx + 1}`}
                   />
-                </LazyLoad>
+                </div>
 
                 {/* Content Section */}
                 <div className="flex flex-col items-center gap-[1.5rem] text-center xl:items-start xl:text-left">

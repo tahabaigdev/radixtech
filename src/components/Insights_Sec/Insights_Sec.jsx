@@ -1,6 +1,5 @@
 import Common_Heading from "../../styles/Common_Heading/Common_Heading";
 import InsightsImage from "../../assets/images/insights.gif";
-import LazyLoad from "react-lazyload";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
@@ -60,7 +59,7 @@ const Insights_Sec = () => {
             className="group"
           >
             <div className="flex flex-col gap-[1rem]">
-              <LazyLoad className="aspect-[1.5/1] overflow-hidden rounded-[1.2rem] border border-[#e9e2da] shadow-shadow2">
+              <div className="aspect-[1.5/1] overflow-hidden rounded-[1.2rem] border border-[#e9e2da] shadow-shadow2">
                 <iframe
                   className="h-[100%] w-[100%] transition-all duration-[0.3s] ease-out group-hover:scale-[1.05]"
                   src="https://www.youtube.com/embed/videoseries?si=I_WXHoYoB3S8Tixw&amp;list=PLgb9798Mo2GeH9SeMBCRWJhgLMWYKp2Yy"
@@ -69,7 +68,7 @@ const Insights_Sec = () => {
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 ></iframe>
-              </LazyLoad>
+              </div>
 
               <div className="flex flex-col gap-[.5rem]">
                 <h4 className="text-[2rem] font-bold capitalize leading-[3rem] text-blackColor">
@@ -92,13 +91,13 @@ const Insights_Sec = () => {
             className="group"
           >
             <div className="flex flex-col gap-[1rem]">
-              <LazyLoad className="aspect-[1.5/1] overflow-hidden rounded-[1.2rem] border border-[#e9e2da] shadow-shadow2">
+              <div className="aspect-[1.5/1] overflow-hidden rounded-[1.2rem] border border-[#e9e2da] shadow-shadow2">
                 <img
                   src={InsightsImage}
                   alt="Blog Image"
                   className="h-[100%] w-[100%] object-cover object-center transition-all duration-[0.3s] ease-out group-hover:scale-[1.05]"
                 />
-              </LazyLoad>
+              </div>
 
               <div className="flex flex-col gap-[.5rem]">
                 <h4 className="text-[2rem] font-bold capitalize leading-[3rem] text-blackColor">

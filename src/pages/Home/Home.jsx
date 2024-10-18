@@ -1,36 +1,72 @@
-import About_Sec from "../../components/About_Sec/About_Sec";
-import Insights_Sec from "../../components/Insights_Sec/Insights_Sec";
+import React, { lazy, Suspense } from "react";
 import Hero_Sec from "../../components/Hero_Sec/Hero_Sec";
-import Products_Sec from "../../components/Products_Sec/Products_Sec";
-import Testimonials_Sec from "../../components/Testimonials_Sec/Testimonials_Sec";
-import Solutions_Sec from "../../components/Solutions_Sec/Solutions_Sec";
-import Client_Sec from "../../components/Client_Sec/Client_Sec";
-import Schedule_Sec from "../../components/Schedule_Sec/Schedule_Sec";
-import Services_Sec from "../../components/Services_Sec/Services_Sec";
-import Why_Radix_Sec from "../../components/Why_Radix_Sec/Why_Radix_Sec";
+
+// Lazy load the other components
+const About_Sec = lazy(() => import("../../components/About_Sec/About_Sec"));
+
+const Insights_Sec = lazy(
+  () => import("../../components/Insights_Sec/Insights_Sec"),
+);
+const Products_Sec = lazy(
+  () => import("../../components/Products_Sec/Products_Sec"),
+);
+const Testimonials_Sec = lazy(
+  () => import("../../components/Testimonials_Sec/Testimonials_Sec"),
+);
+const Solutions_Sec = lazy(
+  () => import("../../components/Solutions_Sec/Solutions_Sec"),
+);
+const Client_Sec = lazy(() => import("../../components/Client_Sec/Client_Sec"));
+const Schedule_Sec = lazy(
+  () => import("../../components/Schedule_Sec/Schedule_Sec"),
+);
+const Services_Sec = lazy(
+  () => import("../../components/Services_Sec/Services_Sec"),
+);
+const Why_Radix_Sec = lazy(
+  () => import("../../components/Why_Radix_Sec/Why_Radix_Sec"),
+);
 
 const Home = () => {
   return (
     <>
       <Hero_Sec />
 
-      <Client_Sec />
+      <Suspense fallback={<div>Loading Client Section...</div>}>
+        <Client_Sec />
+      </Suspense>
 
-      <Products_Sec />
+      <Suspense fallback={<div>Loading Products Section...</div>}>
+        <Products_Sec />
+      </Suspense>
 
-      <Solutions_Sec />
+      <Suspense fallback={<div>Loading Solutions Section...</div>}>
+        <Solutions_Sec />
+      </Suspense>
 
-      <Services_Sec />
+      <Suspense fallback={<div>Loading Services Section...</div>}>
+        <Services_Sec />
+      </Suspense>
 
-      <Testimonials_Sec />
+      <Suspense fallback={<div>Loading Testimonials...</div>}>
+        <Testimonials_Sec />
+      </Suspense>
 
-      <About_Sec />
+      <Suspense fallback={<div>Loading About Section...</div>}>
+        <About_Sec />
+      </Suspense>
 
-      <Why_Radix_Sec />
+      <Suspense fallback={<div>Loading Why Radix Section...</div>}>
+        <Why_Radix_Sec />
+      </Suspense>
 
-      <Insights_Sec />
+      <Suspense fallback={<div>Loading Insights Section...</div>}>
+        <Insights_Sec />
+      </Suspense>
 
-      <Schedule_Sec />
+      <Suspense fallback={<div>Loading Schedule Section...</div>}>
+        <Schedule_Sec />
+      </Suspense>
     </>
   );
 };
